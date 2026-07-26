@@ -1,0 +1,3489 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO -->
+    <title>SAWADOGO Mahmoud Abass - Ingénieur en Électronique et Systèmes Embarqués </title>
+    <meta name="description" content="Portfolio professionnel de Mahmoud Abass SAWADOGO, élève ingénieur spécialisé en électronique et systèmes embarqués, avec des compétences complémentaires en télécommunications, réseaux et automatisme industriel.">
+    <meta name="keywords" content="ingénieur, électronique, systèmes embarqués, STM32, ESP32, Arduino, FPGA, VHDL, IoT, télécommunications, réseaux, automatisme, fibre optique">
+    <meta name="author" content="SAWADOGO Mahmoud Abass">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="SAWADOGO Mahmoud Abass - Ingénieur en Électronique et Systèmes Embarqués">
+    <meta property="og:description" content="Découvrez mon parcours et mes projets en électronique et systèmes embarqués">
+    <meta property="og:image" content="assets/photoDeProfilCv.jpg">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/mas_favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a2b5b5d8a5.js" crossorigin="anonymous"></script>
+    
+    <style>
+        /* ==========================================
+           VARIABLES & RESET
+        ========================================== */
+        :root {
+            /* Palette professionnelle moderne */
+            --primary-blue: #2563eb;
+            --dark-blue: #1e40af;
+            --light-blue: #3b82f6;
+            --accent-teal: #14b8a6;
+            --accent-purple: #8b5cf6;
+            
+            /* Neutrals */
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            
+            --text-dark: #111827;
+            --text-medium: #6b7280;
+            --text-light: #9ca3af;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+            --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+            
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+            /* Identité électronique / circuit imprimé */
+            --pcb-dark: #0c1524;
+            --pcb-cyan: #22d3ee;
+            --pcb-cyan-dim: rgba(34, 211, 238, 0.18);
+            --pcb-amber: #d97706;
+            --pcb-amber-dim: rgba(217, 119, 6, 0.18);
+            --led-green: #22c55e;
+            --led-amber: #f59e0b;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        /* ==========================================
+           MODE SOMBRE
+        ========================================== */
+        html[data-theme="dark"] {
+            --bg-light: #0b1220;
+            --bg-white: #111a2c;
+            --gray-50: #111a2c;
+            --gray-100: #17223a;
+            --gray-200: #223049;
+            --gray-300: #2e3f5c;
+            --gray-600: #a3b1c6;
+            --gray-700: #c3cee0;
+            --gray-800: #e2e8f0;
+            --gray-900: #f1f5f9;
+            --text-dark: #eef2f7;
+            --text-medium: #a9b6cc;
+            --text-light: #7c8aa3;
+        }
+
+        html[data-theme="dark"] body {
+            background: var(--bg-light);
+            color: var(--text-dark);
+        }
+
+        html[data-theme="dark"] .section.alt,
+        html[data-theme="dark"] .skill-card,
+        html[data-theme="dark"] .tool-card,
+        html[data-theme="dark"] .project,
+        html[data-theme="dark"] .exp-card,
+        html[data-theme="dark"] .cert-card,
+        html[data-theme="dark"] .assoc-card,
+        html[data-theme="dark"] .award-card,
+        html[data-theme="dark"] .lang-card,
+        html[data-theme="dark"] .hobby-card,
+        html[data-theme="dark"] .filter-btn,
+        html[data-theme="dark"] .contact-form input,
+        html[data-theme="dark"] .contact-form textarea {
+            background: var(--bg-white);
+        }
+
+        html[data-theme="dark"] nav {
+            background: rgba(11, 18, 32, 0.8);
+        }
+
+        html[data-theme="dark"] nav.scrolled {
+            background: rgba(11, 18, 32, 0.95);
+        }
+
+        html[data-theme="dark"] .logo {
+            color: var(--text-dark);
+        }
+
+        html[data-theme="dark"] .header {
+            background: linear-gradient(135deg, #0b1220 0%, #0d1626 100%);
+        }
+
+        html[data-theme="dark"] .btn-alt {
+            background: transparent;
+        }
+
+        /* ==========================================
+           BOUTONS DE CONTRÔLE (langue / thème)
+        ========================================== */
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-left: 1rem;
+        }
+
+        .control-btn {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--pcb-cyan);
+            background: var(--pcb-dark);
+            border: 1px solid var(--pcb-cyan);
+            border-radius: 6px;
+            width: 38px;
+            height: 32px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .control-btn:hover {
+            background: #0a1a2c;
+            box-shadow: 0 0 0 1px var(--pcb-cyan), 0 4px 12px -2px rgba(34, 211, 238, 0.4);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* ==========================================
+           LOADER
+        ========================================== */
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--pcb-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+        
+        #loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .loader-spinner {
+            position: relative;
+            width: 64px;
+            height: 64px;
+            border: 2px solid rgba(34, 211, 238, 0.25);
+            border-radius: 6px;
+        }
+
+        .loader-spinner::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 6px;
+            border: 2px solid transparent;
+            border-top-color: var(--pcb-cyan);
+            border-right-color: var(--pcb-cyan);
+            animation: spin 1s linear infinite;
+        }
+
+        .loader-spinner::after {
+            content: 'BOOT';
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            color: var(--pcb-cyan);
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* ==========================================
+           NAVBAR
+        ========================================== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            transition: var(--transition);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        nav::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--pcb-cyan) 20%, var(--pcb-cyan) 80%, transparent);
+            opacity: 0.6;
+        }
+        
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            font-size: 1.5rem;
+            color: var(--pcb-cyan);
+            display: inline-flex;
+            filter: drop-shadow(0 0 4px rgba(34, 211, 238, 0.5));
+        }
+        
+        .logo-text {
+            background: linear-gradient(135deg, var(--primary-blue), var(--pcb-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--pcb-cyan);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--dark-blue);
+        }
+        
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+        
+        .nav-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+        
+        /* ==========================================
+           HERO SECTION
+        ========================================== */
+        .header {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #ffffff 0%, var(--gray-50) 100%);
+        }
+        
+        .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            background: 
+                radial-gradient(circle at 20% 50%, var(--primary-blue) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, var(--accent-teal) 0%, transparent 50%);
+        }
+
+        .circuit-trace-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .header-content {
+            text-align: center;
+            z-index: 1;
+            padding: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-eyebrow {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            color: var(--pcb-cyan);
+            background: var(--pcb-dark);
+            padding: 0.45rem 1rem;
+            border-radius: 5px;
+            margin-bottom: 1.75rem;
+        }
+
+        .profile-img-wrap {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 2rem;
+        }
+
+        .profile-img-wrap::before {
+            content: '';
+            position: absolute;
+            inset: -12px;
+            border-radius: 50%;
+            border: 1.5px dashed var(--pcb-cyan);
+            opacity: 0.55;
+            animation: rotate-ring 18s linear infinite;
+        }
+
+        @keyframes rotate-ring {
+            to { transform: rotate(360deg); }
+        }
+        
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--pcb-cyan);
+            box-shadow: var(--shadow-2xl);
+            transition: var(--transition);
+        }
+        
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 25px 50px -12px rgba(34, 211, 238, 0.35);
+        }
+        
+        .header-content h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        .header-content > p:first-of-type {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .header-content > p:last-of-type {
+            font-size: 1.1rem;
+            color: var(--text-medium);
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .hero-spec-line {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 2rem;
+            font-family: var(--font-mono);
+        }
+
+        .hero-spec-line span {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: var(--text-medium);
+            padding: 0.25rem 0.7rem;
+            border: 1px solid var(--gray-300);
+            border-radius: 4px;
+        }
+        
+        .header-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .btn-primary {
+            background: var(--pcb-dark);
+            color: var(--pcb-cyan);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--pcb-cyan);
+        }
+        
+        .btn-primary:hover {
+            background: #0a1a2c;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 0 0 1px var(--pcb-cyan), 0 10px 25px -5px rgba(34, 211, 238, 0.45);
+        }
+        
+        .btn-alt {
+            background: white;
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+        }
+        
+        .btn-alt:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* ==========================================
+           SECTIONS GÉNÉRIQUES
+        ========================================== */
+        .section {
+            padding: 5rem 2rem;
+            position: relative;
+        }
+        
+        .section.alt {
+            background: white;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--text-dark);
+        }
+        
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90px;
+            height: 4px;
+            border-radius: 2px;
+            background:
+                radial-gradient(circle 3.5px at 3px 50%, var(--pcb-cyan) 99%, transparent 100%),
+                radial-gradient(circle 3.5px at calc(100% - 3px) 50%, var(--pcb-cyan) 99%, transparent 100%),
+                linear-gradient(90deg, var(--primary-blue), var(--accent-teal));
+        }
+
+        /* Eyebrow façon terminal, pour les sections techniques */
+        .section-eyebrow {
+            display: block;
+            text-align: center;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            color: var(--pcb-cyan);
+            background: var(--pcb-dark);
+            width: fit-content;
+            margin: 0 auto 1.25rem;
+            padding: 0.4rem 1rem;
+            border-radius: 6px;
+        }
+
+        .section-eyebrow::before {
+            content: '> ';
+            opacity: 0.7;
+        }
+
+        .section-eyebrow::after {
+            content: '_';
+            animation: blink-cursor 1.1s step-end infinite;
+        }
+
+        @keyframes blink-cursor {
+            50% { opacity: 0; }
+        }
+
+        /* Texture "breadboard" : trame de trous, très discrète */
+        .circuit-bg {
+            background-image: radial-gradient(circle, rgba(37, 99, 235, 0.12) 1px, transparent 1.4px);
+            background-size: 22px 22px;
+        }
+
+        /* Étiquette de rôle à côté d'un titre de catégorie (CŒUR / SUPPORT) */
+        .cat-tag {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 0.2rem 0.55rem;
+            border-radius: 4px;
+            margin-left: 0.75rem;
+            vertical-align: middle;
+            display: inline-block;
+        }
+
+        .cat-tag-core {
+            color: var(--pcb-cyan);
+            background: var(--pcb-cyan-dim);
+            border: 1px solid var(--pcb-cyan);
+        }
+
+        .cat-tag-support {
+            color: var(--pcb-amber);
+            background: var(--pcb-amber-dim);
+            border: 1px solid var(--pcb-amber);
+        }
+        
+        /* ==========================================
+           PROFIL
+        ========================================== */
+        #profil p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-medium);
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: justify;
+        }
+        
+        /* ==========================================
+           FORMATIONS
+        ========================================== */
+        .formations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .formation-card {
+            position: relative;
+            height: 350px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .formation-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+            transition: var(--transition);
+        }
+        
+        .formation-card:nth-child(1)::before {
+            background-image: linear-gradient(rgba(37, 99, 235, 0.85), rgba(30, 64, 175, 0.95)), url('assets/fstf.jpeg');
+        }
+        
+        .formation-card:nth-child(2)::before {
+            background-image: linear-gradient(rgba(20, 184, 166, 0.85), rgba(13, 148, 136, 0.95)), url('assets/fstt.png');
+        }
+        
+        .formation-card:nth-child(3)::before {
+            background-image: linear-gradient(rgba(139, 92, 246, 0.85), rgba(109, 40, 217, 0.95)), url('assets/ltnasl.jpeg');
+        }
+        
+        .formation-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-2xl);
+        }
+        
+        .formation-card:hover::before {
+            transform: scale(1.1);
+        }
+        
+        .formation-content {
+            position: relative;
+            z-index: 1;
+            padding: 2rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: white;
+        }
+        
+        .formation-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        
+        .formation-card h3 {
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        
+        .formation-card p {
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+        
+        .formation-card em {
+            color: white;
+            font-style: normal;
+            font-weight: 700;
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        /* ==========================================
+           FILTRES
+        ========================================== */
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        
+        .filter-btn {
+            padding: 0.8rem 1.5rem;
+            background: white;
+            color: var(--text-dark);
+            border: 2px solid var(--gray-200);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .filter-btn:hover {
+            background: var(--gray-50);
+            border-color: var(--primary-blue);
+            transform: translateY(-2px);
+        }
+        
+        .filter-btn.active {
+            background: var(--primary-blue);
+            color: white;
+            border-color: var(--primary-blue);
+        }
+        
+        /* ==========================================
+           EXPÉRIENCES
+        ========================================== */
+        .exp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .exp-card {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+            background: white;
+            height: 100%;
+        }
+        
+        .exp-card.hidden {
+            display: none;
+        }
+        
+        .exp-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .exp-card-header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .exp-card-header::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 20px solid var(--dark-blue);
+        }
+        
+        .exp-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: 12px;
+            background: white;
+            padding: 10px;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .exp-card-body {
+            padding: 2.5rem 2rem 2rem;
+        }
+        
+        .exp-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-blue);
+            line-height: 1.4;
+        }
+        
+        .exp-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .exp-card li {
+            color: var(--text-medium);
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .exp-card li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .exp-card .btn-small {
+            margin-top: 1.25rem;
+        }
+        
+        /* ==========================================
+           COMPÉTENCES — cartes façon composant PCB
+        ========================================== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            counter-reset: chip-ref;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 1.75rem 1.5rem 1.5rem;
+            border-radius: 10px;
+            border: 1px solid var(--gray-200);
+            border-left: 3px solid transparent;
+            transition: var(--transition);
+            position: relative;
+            counter-increment: chip-ref;
+            cursor: pointer;
+        }
+
+        /* Désignateur de référence façon silkscreen PCB (U01, U02… / R01, R02…) */
+        .skill-card::before {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            position: absolute;
+            top: 12px;
+            left: 16px;
+        }
+
+        /* Repères de coin façon marques de fabrication PCB + point LED d'état */
+        .skill-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 10px;
+            pointer-events: none;
+            background:
+                radial-gradient(circle 3px at calc(100% - 14px) 16px, currentColor 98%, transparent 100%),
+                linear-gradient(to right, currentColor 2px, transparent 2px) 0 0 / 12px 2px no-repeat,
+                linear-gradient(to bottom, currentColor 2px, transparent 2px) 0 0 / 2px 12px no-repeat,
+                linear-gradient(to left, currentColor 2px, transparent 2px) 100% 0 / 12px 2px no-repeat,
+                linear-gradient(to bottom, currentColor 2px, transparent 2px) 100% 0 / 2px 12px no-repeat,
+                linear-gradient(to right, currentColor 2px, transparent 2px) 0 100% / 12px 2px no-repeat,
+                linear-gradient(to top, currentColor 2px, transparent 2px) 0 100% / 2px 12px no-repeat,
+                linear-gradient(to left, currentColor 2px, transparent 2px) 100% 100% / 12px 2px no-repeat,
+                linear-gradient(to top, currentColor 2px, transparent 2px) 100% 100% / 2px 12px no-repeat;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .skill-card:hover::after {
+            opacity: 1;
+            filter: drop-shadow(0 0 3px currentColor);
+        }
+
+        .skill-icon {
+            font-size: 1.5rem;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            transition: var(--transition);
+        }
+
+        .skill-card:hover .skill-icon {
+            transform: scale(1.08);
+        }
+
+        .skill-text {
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.98rem;
+            line-height: 1.5;
+        }
+
+        /* Groupe principal — Électronique & Systèmes Embarqués : désignateur "U", LED verte (actif) */
+        #competences .tools-category:nth-of-type(1) .skill-card {
+            border-left-color: var(--pcb-cyan);
+        }
+
+        #competences .tools-category:nth-of-type(1) .skill-card::before {
+            content: "U" counter(chip-ref, decimal-leading-zero);
+            color: var(--pcb-cyan);
+        }
+
+        #competences .tools-category:nth-of-type(1) .skill-card::after {
+            color: var(--pcb-cyan);
+        }
+
+        #competences .tools-category:nth-of-type(1) .skill-icon {
+            background: var(--pcb-cyan-dim);
+            color: var(--pcb-cyan);
+        }
+
+        /* Groupe secondaire — Polyvalence : désignateur "R", accent ambre (support) */
+        #competences .tools-category:nth-of-type(2) .skill-card {
+            border-left-color: var(--pcb-amber);
+        }
+
+        #competences .tools-category:nth-of-type(2) .skill-card::before {
+            content: "R" counter(chip-ref, decimal-leading-zero);
+            color: var(--pcb-amber);
+        }
+
+        #competences .tools-category:nth-of-type(2) .skill-card::after {
+            color: var(--pcb-amber);
+        }
+
+        #competences .tools-category:nth-of-type(2) .skill-icon {
+            background: var(--pcb-amber-dim);
+            color: var(--pcb-amber);
+        }
+        
+        /* ==========================================
+           PROJETS
+        ========================================== */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            background: white;
+            border-top: 3px solid var(--gray-200);
+        }
+        
+        .project.hidden {
+            display: none;
+        }
+        
+        .project:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .project.project-embedded {
+            border-top-color: var(--pcb-cyan);
+        }
+
+        .project-featured-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: white;
+            background: var(--pcb-dark);
+            border: 1px solid var(--pcb-cyan);
+            padding: 0.3rem 0.6rem;
+            border-radius: 5px;
+        }
+
+        .project-featured-badge i {
+            color: var(--pcb-cyan);
+        }
+
+        .project-domains {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 0.85rem;
+        }
+
+        .domain-badge {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            color: var(--gray-700);
+            background: var(--gray-100);
+            border: 1px solid var(--gray-300);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .domain-badge i {
+            font-size: 0.68rem;
+        }
+
+        .domain-badge.domain-iot {
+            color: var(--pcb-cyan);
+            background: var(--pcb-cyan-dim);
+            border-color: var(--pcb-cyan);
+        }
+        
+        .project img,
+        .project video {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .project-overlay {
+            padding: 1.5rem;
+        }
+        
+        .project-overlay h3 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .project-overlay p {
+            color: var(--text-medium);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .btn-small {
+            padding: 0.5rem 1rem;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .btn-small:hover {
+            background: var(--dark-blue);
+            transform: translateY(-2px);
+        }
+        
+        /* ==========================================
+           OUTILS
+        ========================================== */
+        .tools-category {
+            margin-bottom: 60px;
+        }
+
+        .tools-category h3 {
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            font-family: 'Poppins', sans-serif;
+            border-left: 4px solid var(--primary-blue);
+            padding-left: 15px;
+            font-weight: 600;
+        }
+
+        /* ==========================================
+           PANNEAU "PCB LUMINEUX" — mis en avant du
+           bloc principal Électronique & Embarqué
+        ========================================== */
+        .pcb-glow-panel {
+            position: relative;
+            border-radius: 22px;
+            padding: 2.5rem 2rem 2rem;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(34, 211, 238, 0.35), transparent 45%),
+                radial-gradient(circle at 85% 15%, rgba(217, 70, 160, 0.18), transparent 40%),
+                radial-gradient(circle at 90% 90%, rgba(37, 99, 235, 0.35), transparent 45%),
+                linear-gradient(135deg, #0a1628 0%, #0c1f3a 45%, #081221 100%);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .pcb-glow-panel .pcb-glow-trace {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .pcb-glow-panel h3 {
+            color: white;
+            border-left-color: var(--pcb-cyan);
+            position: relative;
+            z-index: 1;
+        }
+
+        .pcb-glow-panel .skills-grid,
+        .pcb-glow-panel .tools-grid {
+            position: relative;
+            z-index: 1;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 25px;
+        }
+
+        .tool-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+            border-top: 3px solid var(--gray-200);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .tool-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background:
+                linear-gradient(to right, currentColor 2px, transparent 2px) 0 0 / 10px 2px no-repeat,
+                linear-gradient(to bottom, currentColor 2px, transparent 2px) 0 0 / 2px 10px no-repeat,
+                linear-gradient(to left, currentColor 2px, transparent 2px) 100% 0 / 10px 2px no-repeat,
+                linear-gradient(to bottom, currentColor 2px, transparent 2px) 100% 0 / 2px 10px no-repeat,
+                linear-gradient(to right, currentColor 2px, transparent 2px) 0 100% / 10px 2px no-repeat,
+                linear-gradient(to top, currentColor 2px, transparent 2px) 0 100% / 2px 10px no-repeat,
+                linear-gradient(to left, currentColor 2px, transparent 2px) 100% 100% / 10px 2px no-repeat,
+                linear-gradient(to top, currentColor 2px, transparent 2px) 100% 100% / 2px 10px no-repeat;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .tools-category-core .tool-card {
+            border-top-color: var(--pcb-cyan);
+            color: var(--pcb-cyan);
+            background: linear-gradient(180deg, var(--pcb-cyan-dim) 0%, white 45%);
+        }
+
+        .tools-category:not(.tools-category-core) .tool-card {
+            border-top-color: var(--pcb-amber);
+            color: var(--pcb-amber);
+        }
+
+        .tool-card img {
+            height: 70px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .tool-card p {
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .tool-card:hover::after {
+            opacity: 1;
+            filter: drop-shadow(0 0 3px currentColor);
+        }
+
+        /* ==========================================
+           CERTIFICATIONS - OPTIMISÉE
+        ========================================== */
+        #certifications {
+            background: var(--bg-light);
+        }
+
+        .cert-category {
+            margin-bottom: 70px;
+        }
+
+        .cert-category h3 {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: var(--text-dark);
+            font-family: 'Poppins', sans-serif;
+            border-left: 5px solid var(--primary-blue);
+            padding-left: 15px;
+            font-weight: 600;
+        }
+
+        /* GRID - 3 COLONNES */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* CARD */
+        .cert-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            text-align: center;
+            padding: 0;
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* IMAGE CONTAINER */
+        .cert-image-container {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            background: var(--gray-100);
+        }
+
+        .cert-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .cert-card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* OVERLAY ICON */
+        .cert-image-container::after {
+            content: '\f00e';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: #ffffff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            opacity: 0;
+            transition: var(--transition);
+            pointer-events: none;
+        }
+
+        .cert-card:hover .cert-image-container::after {
+            opacity: 0.8;
+        }
+
+        /* INFO SECTION */
+        .cert-info {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* TITLE */
+        .cert-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.4;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* BOUTON DÉTAILS */
+        .cert-detail-btn {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .cert-detail-btn:hover {
+            background: var(--dark-blue);
+            transform: translateY(-2px);
+        }
+
+        /* ==========================================
+           MODAL IMAGE
+        ========================================== */
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .image-modal.active {
+            display: flex;
+        }
+
+        .image-modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 12px;
+            box-shadow: var(--shadow-2xl);
+            animation: zoomIn 0.3s ease;
+        }
+
+        .image-modal-close {
+            position: absolute;
+            top: 30px;
+            right: 50px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+            transition: var(--transition);
+            background: none;
+            border: none;
+            padding: 10px;
+        }
+
+        .image-modal-close:hover {
+            transform: scale(1.2) rotate(90deg);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes zoomIn {
+            from {transform: scale(0.7);}
+            to {transform: scale(1);}
+        }
+        
+        /* ==========================================
+           RÉCOMPENSES
+        ========================================== */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .award-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--accent-teal);
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+            font-size: 1.1rem;
+            color: var(--text-dark);
+        }
+        
+        .award-card:hover {
+            transform: translateX(8px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        /* ==========================================
+           ASSOCIATIF
+        ========================================== */
+        .assoc-grid {
+            display: grid;
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .assoc-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--primary-blue);
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+            color: var(--text-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .assoc-card:hover {
+            transform: translateX(8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .assoc-detail-btn {
+            flex-shrink: 0;
+            padding: 0.5rem 1rem;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: var(--transition);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .assoc-detail-btn:hover {
+            background: var(--dark-blue);
+        }
+        
+        /* ==========================================
+           LANGUES & HOBBIES
+        ========================================== */
+        .lang-hobby-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .lang-card,
+        .hobby-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .lang-card h3,
+        .hobby-card h3 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .lang-card ul,
+        .hobby-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .lang-card li,
+        .hobby-card li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--gray-200);
+            color: var(--text-dark);
+        }
+        
+        .lang-card li:last-child,
+        .hobby-card li:last-child {
+            border-bottom: none;
+        }
+        
+        /* ==========================================
+           CONTACT
+        ========================================== */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            padding: 1rem;
+            background: white;
+            border: 2px solid var(--gray-200);
+            border-radius: 10px;
+            color: var(--text-dark);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        .contact-form button {
+            align-self: flex-start;
+        }
+        
+        .form-message {
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            display: none;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .form-message.success {
+            background: rgba(34, 197, 94, 0.1);
+            border: 2px solid rgb(34, 197, 94);
+            color: rgb(21, 128, 61);
+            display: block;
+        }
+        
+        .form-message.error {
+            background: rgba(239, 68, 68, 0.1);
+            border: 2px solid rgb(239, 68, 68);
+            color: rgb(185, 28, 28);
+            display: block;
+        }
+        
+        /* ==========================================
+           FOOTER
+        ========================================== */
+        footer {
+            background: var(--gray-900);
+            padding: 2rem;
+            text-align: center;
+            color: var(--gray-300);
+        }
+        
+        /* ==========================================
+           ANIMATIONS
+        ========================================== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in,
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in.visible,
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* ==========================================
+           MODAL PROJETS
+        ========================================== */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            overflow-y: auto;
+            padding: 2rem;
+        }
+        
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: fadeInUp 0.4s ease-out;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: var(--transition);
+            background: none;
+            border: none;
+        }
+        
+        .modal-close:hover {
+            color: var(--primary-blue);
+            transform: rotate(90deg);
+        }
+        
+        .modal-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+        
+        .modal-section {
+            margin-bottom: 2rem;
+        }
+        
+        .modal-section h4 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--accent-teal);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .modal-section p,
+        .modal-section ul {
+            color: var(--text-medium);
+            line-height: 1.8;
+        }
+        
+        .modal-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .modal-section li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+        
+        .modal-section li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+        }
+        
+        .modal-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .modal-tags .tag {
+            padding: 0.5rem 1rem;
+            background: var(--gray-100);
+            color: var(--primary-blue);
+            border-radius: 20px;
+            border: 1px solid var(--gray-200);
+            font-size: 0.9rem;
+        }
+        
+        /* ==========================================
+           RESPONSIVE
+        ========================================== */
+        @media (max-width: 968px) {
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: rgba(255, 255, 255, 0.98);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: var(--shadow-lg);
+                padding: 2rem 0;
+                gap: 1rem;
+                backdrop-filter: blur(12px);
+            }
+
+            html[data-theme="dark"] .nav-links {
+                background: rgba(11, 18, 32, 0.98);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-toggle {
+                display: flex;
+            }
+            
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .exp-grid,
+            .projects-grid,
+            .formations-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            
+            .section h2 {
+                font-size: 1.5rem;
+            }
+            
+            .profile-img,
+            .profile-img-wrap {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .formation-card {
+                height: 300px;
+            }
+            
+            .skill-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .skill-icon {
+                font-size: 2rem;
+            }
+
+            .image-modal-close {
+                top: 10px;
+                right: 20px;
+                font-size: 30px;
+            }
+        }
+        
+        /* ==========================================
+           SCROLLBAR
+        ========================================== */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--gray-100);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-blue);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--dark-blue);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- LOADER -->
+    <div id="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon"><i class="fas fa-microchip"></i></span>
+                <span class="logo-text">ABASS</span>
+            </div>
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="#profil" class="nav-link"><i class="fas fa-user"></i> <span data-i18n="nav.profil">Profil</span></a></li>
+                <li><a href="#formations" class="nav-link"><i class="fas fa-graduation-cap"></i> <span data-i18n="nav.formations">Formations</span></a></li>
+                <li><a href="#experiences" class="nav-link"><i class="fas fa-briefcase"></i> <span data-i18n="nav.experiences">Expériences</span></a></li>
+                <li><a href="#competences" class="nav-link"><i class="fas fa-cogs"></i> <span data-i18n="nav.competences">Compétences</span></a></li>
+                <li><a href="#projets" class="nav-link"><i class="fas fa-project-diagram"></i> <span data-i18n="nav.projets">Projets</span></a></li>
+                <li><a href="#outils" class="nav-link"><i class="fas fa-tools"></i> <span data-i18n="nav.outils">Outils</span></a></li>
+                <li><a href="#certifications" class="nav-link"><i class="fas fa-certificate"></i> <span data-i18n="nav.certifications">Certifications</span></a></li>
+                <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> <span data-i18n="nav.contact">Contact</span></a></li>
+            </ul>
+            <div class="nav-controls">
+                <button id="lang-toggle" class="control-btn" type="button" aria-label="Changer de langue / Switch language">
+                    <span id="lang-toggle-label">EN</span>
+                </button>
+                <button id="theme-toggle" class="control-btn" type="button" aria-label="Changer de thème / Switch theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="header" id="hero">
+        <div class="parallax-bg" id="parallax-bg"></div>
+        <svg class="circuit-trace-bg" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <g fill="none" stroke="var(--pcb-cyan)" stroke-width="1.4" opacity="0.35">
+                <path d="M0,120 H260 V60 H520 V180 H760" />
+                <path d="M1200,90 H940 V220 H700 V140" />
+                <path d="M0,560 H180 V620 H460 V500 H720" />
+                <path d="M1200,600 H980 V480 H640 V560" />
+                <path d="M120,0 V90" />
+                <path d="M1080,0 V90" />
+                <path d="M600,700 V600" />
+            </g>
+            <g fill="var(--pcb-cyan)" opacity="0.45">
+                <circle cx="260" cy="120" r="4" />
+                <circle cx="520" cy="60" r="4" />
+                <circle cx="760" cy="180" r="4" />
+                <circle cx="940" cy="90" r="4" />
+                <circle cx="700" cy="220" r="4" />
+                <circle cx="180" cy="560" r="4" />
+                <circle cx="460" cy="620" r="4" />
+                <circle cx="720" cy="500" r="4" />
+                <circle cx="980" cy="600" r="4" />
+                <circle cx="640" cy="480" r="4" />
+            </g>
+            <circle r="3.5" fill="var(--pcb-cyan)">
+                <animateMotion dur="6s" repeatCount="indefinite" path="M0,120 H260 V60 H520 V180 H760" />
+            </circle>
+            <circle r="3.5" fill="var(--pcb-amber)">
+                <animateMotion dur="7s" repeatCount="indefinite" path="M1200,600 H980 V480 H640 V560" />
+            </circle>
+        </svg>
+        <div class="header-content">
+            <span class="hero-eyebrow" data-i18n="hero.eyebrow">PROFILE // ELECTRONICS &amp; EMBEDDED SYSTEMS ENGINEER</span>
+            <div class="profile-img-wrap">
+                <img src="assets/photoDeProfilCv.jpg" alt="Photo de profil" class="profile-img">
+            </div>
+            <h1 id="typing-text"></h1>
+            <p data-i18n="hero.role">Élève ingénieur en Systèmes Intelligents, Communicants et Mobiles</p>
+            <p data-i18n="hero.subtitle">Spécialisé en Électronique et Systèmes Embarqués — Polyvalence en Télécommunications, Réseaux et Automatisme Industriel</p>
+            <div class="hero-spec-line">
+                <span>MCU</span><span>FPGA</span><span>RF / IoT</span><span data-i18n="hero.spec.automatisme">Automatisme</span>
+            </div>
+            <div class="header-buttons">
+                <a href="assets/CV Mahmoud Abass SAWADOGO.pdf" class="btn btn-primary" download>
+                    <span data-i18n="hero.btn.cv">Télécharger CV</span>
+                </a>
+                <a href="#contact" class="btn btn-alt">
+                    <span data-i18n="hero.btn.contact">Contactez-moi</span>
+                </a>
+                   <a href="https://wa.me/212619942459" class="btn btn-alt">
+                        <span data-i18n="hero.btn.whatsapp">Par WhatsApp</span>
+                </a>
+                <a href="#linkedin" class="btn btn-alt">
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- PROFIL -->
+    <section id="profil" class="section fade-up">
+        <div class="container">
+            <h2 data-i18n="profil.title">Profil</h2>
+            <p data-i18n="profil.text">
+                Étudiant en dernière année du cycle ingénieur en Systèmes Intelligents et Communicants, je possède une solide formation en électronique et systèmes embarqués : conception et programmation de microcontrôleurs (STM32, ESP32, Arduino), conception numérique sur FPGA, électronique analogique et de puissance, capteurs et instrumentation, ainsi que communication sans fil (RF, Wi-Fi, Bluetooth).
+À cette base technique s'ajoute une polyvalence acquise au fil de mes projets et stages, couvrant les télécommunications, les réseaux, l'automatisme industriel et le développement logiciel.
+À l'aise avec les outils de modélisation, simulation et analyse de performance de systèmes embarqués, je cherche un stage PFE pour participer à la conception, l'optimisation et le déploiement de solutions électroniques et embarquées innovantes.
+            </p>
+        </div>
+    </section>
+
+    <!-- FORMATIONS -->
+    <section id="formations" class="section alt fade-up">
+        <div class="container">
+            <h2 data-i18n="formations.title">Formations</h2>
+            <div class="formations-grid">
+                <div class="formation-card">
+                    <div class="formation-content">
+                        <div>
+                            <div class="formation-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <h3>2024 – Présent</h3>
+                            <p data-i18n="formations.fst_fes">Faculté des Sciences et Techniques de Fès</p>
+                        </div>
+                        <em data-i18n="formations.fst_fes_degree">Cycle Ingénieur – Systèmes Intelligents et Communicants</em>
+                    </div>
+                </div>
+                <div class="formation-card">
+                    <div class="formation-content">
+                        <div>
+                            <div class="formation-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <h3>2021 – 2024</h3>
+                            <p>FST Tanger</p>
+                        </div>
+                        <em data-i18n="formations.fst_tanger_degree">Licence en Génie Électrique et Systèmes Industriels</em>
+                    </div>
+                </div>
+                <div class="formation-card">
+                    <div class="formation-content">
+                        <div>
+                            <div class="formation-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <h3>2018 – 2021</h3>
+                            <p data-i18n="formations.lycee">Lycée Technique National A. S. Lamizana</p>
+                        </div>
+                        <em data-i18n="formations.lycee_degree">Série F2 – Électronique</em>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- EXPÉRIENCES -->
+        <section id="experiences" class="section fade-up">
+            <div class="container">
+                <h2 data-i18n="experiences.title">Expériences Professionnelles</h2>
+                
+                <!-- Filtres -->
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all" data-i18n="filter.all">Tous</button>
+                    <button class="filter-btn" data-filter="microcontroleurs" data-i18n="filter.mcu">Microcontrôleurs</button>
+                    <button class="filter-btn" data-filter="electronique" data-i18n="filter.electronique">Électronique</button>
+                    <button class="filter-btn" data-filter="iot" data-i18n="filter.iot_connect">IoT & Connectivité</button>
+                    <button class="filter-btn" data-filter="automatisme" data-i18n="filter.automatisme">Automatisme</button>
+                </div>
+                
+                <div class="exp-grid"> 
+                    <!-- Telecel Faso -->
+                    <div class="exp-card" data-domains="iot,telecom" data-detail="telecel">
+                        <div class="exp-card-header">
+                            <img src="assets/Telecel.jpeg" alt="Telecel Faso">
+                        </div>
+                        <div class="exp-card-body">
+                            <h3 data-i18n="exp.telecel.title">Août – Sept 2025 : Stage PFA – Telecel Faso</h3>
+                            <ul>
+                                <li data-i18n="exp.telecel.li1">Analyse et compréhension des réseaux de télécommunication opérateur</li>
+                                <li data-i18n="exp.telecel.li2">Étude et mesures des systèmes de transmission FH et fibre optique</li>
+                                <li data-i18n="exp.telecel.li3">Configuration et tests de modems radio et équipements CTR Aviat Networks</li>
+                                <li data-i18n="exp.telecel.li4">Évaluation de la performance et fiabilité des liaisons de transport</li>
+                            </ul>
+                            <button class="btn-small exp-detail-btn" data-detail="telecel" type="button" data-i18n="common.more_details">Voir les détails</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Renault Tanger -->
+                    <div class="exp-card" data-domains="electronique,microcontroleurs,iot" data-detail="renault">
+                        <div class="exp-card-header">
+                            <img src="assets/Renault.jpeg" alt="Renault Tanger">
+                        </div>
+                        <div class="exp-card-body">
+                            <h3 data-i18n="exp.renault.title">Avril – Juin 2024 : Stage PFE – Renault Tanger</h3>
+                            <ul>
+                                <li data-i18n="exp.renault.li1">Conception et installation de circuits de protection contre microcoupures</li>
+                                <li data-i18n="exp.renault.li2">Réalisation de circuits de commutation alimentation principale / secours</li>
+                                <li data-i18n="exp.renault.li3">Programmation d'automates pour basculement automatique</li>
+                                <li data-i18n="exp.renault.li4">Implémentation de dispositifs de sécurité sur lignes de production</li>
+                            </ul>
+                            <button class="btn-small exp-detail-btn" data-detail="renault" type="button" data-i18n="common.more_details">Voir les détails</button>
+                        </div>
+                    </div>
+                    
+                    <!-- SONABEL -->
+                    <div class="exp-card" data-domains="electronique,automatisme,iot" data-detail="sonabel">
+                        <div class="exp-card-header">
+                            <img src="assets/Sonabel.png" alt="SONABEL">
+                        </div>
+                        <div class="exp-card-body">
+                            <h3 data-i18n="exp.sonabel.title">Juillet – Août 2023 : Stage d'initiation – SONABEL DCET</h3>
+                            <ul>
+                                <li data-i18n="exp.sonabel.li1">Intervention sur systèmes de protection et contrôle-commande industriels</li>
+                                <li data-i18n="exp.sonabel.li2">Mesures et exploitation des compteurs et capteurs industriels</li>
+                                <li data-i18n="exp.sonabel.li3">Maintenance et suivi des transformateurs et équipements électriques</li>
+                                <li data-i18n="exp.sonabel.li4">Supervision et monitoring via systèmes SCADA</li>
+                            </ul>
+                            <button class="btn-small exp-detail-btn" data-detail="sonabel" type="button" data-i18n="common.more_details">Voir les détails</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPÉTENCES -->
+<section id="competences" class="section alt fade-up circuit-bg">
+    <div class="container">
+        <span class="section-eyebrow">system.skills --list</span>
+        <h2>Compétences</h2>
+
+        <!-- ÉLECTRONIQUE & SYSTÈMES EMBARQUÉS (domaine principal) -->
+        <div class="tools-category pcb-glow-panel">
+            <svg class="pcb-glow-trace" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                <g fill="none" stroke="var(--pcb-cyan)" stroke-width="1.3" opacity="0.55">
+                    <path d="M0,80 H180 V30 H420 V140 H640" />
+                    <path d="M1000,60 H820 V160 H600 V100" />
+                    <path d="M0,420 H140 V470 H380 V360 H580" />
+                    <path d="M1000,440 H840 V340 H560 V420" />
+                </g>
+                <g fill="var(--pcb-cyan)" opacity="0.7">
+                    <circle cx="180" cy="80" r="3.5" />
+                    <circle cx="420" cy="30" r="3.5" />
+                    <circle cx="640" cy="140" r="3.5" />
+                    <circle cx="820" cy="60" r="3.5" />
+                    <circle cx="600" cy="160" r="3.5" />
+                    <circle cx="140" cy="420" r="3.5" />
+                    <circle cx="380" cy="470" r="3.5" />
+                    <circle cx="580" cy="360" r="3.5" />
+                    <circle cx="840" cy="440" r="3.5" />
+                    <circle cx="560" cy="420" r="3.5" />
+                </g>
+            </svg>
+            <h3><span data-i18n="comp.core.title">Électronique & Systèmes Embarqués</span> <span class="cat-tag cat-tag-core" data-i18n="tag.core">CŒUR</span></h3>
+            <div class="skills-grid">
+                <div class="skill-card" data-skill="mcu">
+                    <div class="skill-icon"><i class="fas fa-microchip"></i></div>
+                    <div class="skill-text" data-i18n="skill.mcu">Microcontrôleurs : STM32, ESP32, Arduino</div>
+                </div>
+                <div class="skill-card" data-skill="fpga">
+                    <div class="skill-icon"><i class="fas fa-layer-group"></i></div>
+                    <div class="skill-text" data-i18n="skill.fpga">Conception numérique & FPGA : VHDL, Quartus</div>
+                </div>
+                <div class="skill-card" data-skill="analognum">
+                    <div class="skill-icon"><i class="fas fa-wave-square"></i></div>
+                    <div class="skill-text" data-i18n="skill.analognum">Électronique analogique et numérique</div>
+                </div>
+                <div class="skill-card" data-skill="power">
+                    <div class="skill-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="skill-text" data-i18n="skill.power">Électronique de puissance</div>
+                </div>
+                <div class="skill-card" data-skill="sensors">
+                    <div class="skill-icon"><i class="fas fa-satellite-dish"></i></div>
+                    <div class="skill-text" data-i18n="skill.sensors">Capteurs, instrumentation et acquisition de données</div>
+                </div>
+                <div class="skill-card" data-skill="wireless">
+                    <div class="skill-icon"><i class="fas fa-wifi"></i></div>
+                    <div class="skill-text" data-i18n="skill.wireless">Communication sans fil : RF, Wi-Fi, Bluetooth</div>
+                </div>
+                <div class="skill-card" data-skill="rtos">
+                    <div class="skill-icon"><i class="fas fa-clock"></i></div>
+                    <div class="skill-text" data-i18n="skill.rtos">Systèmes temps réel : FreeRTOS</div>
+                </div>
+                <div class="skill-card" data-skill="iot">
+                    <div class="skill-icon"><i class="fas fa-network-wired"></i></div>
+                    <div class="skill-text" data-i18n="skill.iot">IoT et objets connectés</div>
+                </div>
+                <div class="skill-card" data-skill="simu">
+                    <div class="skill-icon"><i class="fas fa-diagram-project"></i></div>
+                    <div class="skill-text" data-i18n="skill.simu">Simulation électronique : Proteus, MATLAB/Simulink</div>
+                </div>
+                <div class="skill-card" data-skill="vision">
+                    <div class="skill-icon"><i class="fas fa-camera"></i></div>
+                    <div class="skill-text" data-i18n="skill.vision">Vision embarquée : OpenCV, Python</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- POLYVALENCE & COMPÉTENCES COMPLÉMENTAIRES -->
+        <div class="tools-category">
+            <h3><span data-i18n="comp.support.title">Polyvalence & Compétences Complémentaires</span> <span class="cat-tag cat-tag-support" data-i18n="tag.support">SUPPORT</span></h3>
+            <div class="skills-grid">
+                <div class="skill-card" data-skill="telecom">
+                    <div class="skill-icon"><i class="fas fa-tower-broadcast"></i></div>
+                    <div class="skill-text" data-i18n="skill.telecom">Télécommunications RF, FH et Fibre Optique</div>
+                </div>
+                <div class="skill-card" data-skill="pon">
+                    <div class="skill-icon"><i class="fas fa-circle-nodes"></i></div>
+                    <div class="skill-text" data-i18n="skill.pon">Réseaux optiques PON/GPON</div>
+                </div>
+                <div class="skill-card" data-skill="netsim">
+                    <div class="skill-icon"><i class="fas fa-signal"></i></div>
+                    <div class="skill-text" data-i18n="skill.netsim">Simulation réseaux : Atoll, Cisco Packet Tracer</div>
+                </div>
+                <div class="skill-card" data-skill="automation">
+                    <div class="skill-icon"><i class="fas fa-gears"></i></div>
+                    <div class="skill-text" data-i18n="skill.automation">Automatisation industrielle et contrôle-commande</div>
+                </div>
+                <div class="skill-card" data-skill="scada">
+                    <div class="skill-icon"><i class="fas fa-display"></i></div>
+                    <div class="skill-text" data-i18n="skill.scada">Supervision & SCADA industriel</div>
+                </div>
+                <div class="skill-card" data-skill="webdev">
+                    <div class="skill-icon"><i class="fas fa-code"></i></div>
+                    <div class="skill-text" data-i18n="skill.webdev">Développement Web & Mobile : Spring Boot, React</div>
+                </div>
+                <div class="skill-card" data-skill="prog">
+                    <div class="skill-icon"><i class="fas fa-terminal"></i></div>
+                    <div class="skill-text" data-i18n="skill.prog">Programmation : C, C++, Python, Java</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+   <!-- PROJETS -->
+<section id="projets" class="section fade-up circuit-bg">
+    <div class="container">
+        <span class="section-eyebrow">system.projects --log</span>
+        <h2 data-i18n="projets.title">Projets Académiques & Personnels</h2>
+        
+        <!-- Filtres -->
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter-project="all" data-i18n="filter.all">Tous</button>
+            <button class="filter-btn" data-filter-project="iot" data-i18n="filter.iot_embarque">IoT & Embarqué</button>
+            <button class="filter-btn" data-filter-project="automatisme" data-i18n="filter.automatisme">Automatisme</button>
+            <button class="filter-btn" data-filter-project="ia" data-i18n="filter.ia_vision">IA & Vision</button>
+            <button class="filter-btn" data-filter-project="energie" data-i18n="filter.energie">Énergie</button>
+            <button class="filter-btn" data-filter-project="telecom" data-i18n="filter.telecoms">Télécoms</button>
+        </div>
+        
+        <div class="projects-grid">
+            <!-- Smart Solar System -->
+            <div class="project" data-domains-project="iot,energie">
+                <video autoplay muted loop playsinline>
+                    <source src="assets/projets/vid_Projet_3S.mp4" type="video/mp4">
+                </video>
+                <div class="project-overlay">
+                    <h3 data-i18n="project.solar.title">Smart Solar System</h3>
+                    <p data-i18n="project.solar.desc">Optimisation intelligente d'installation solaire avec suivi et contrôle des performances en temps réel</p>
+                    <button class="btn-small" onclick="openProjectModal('solar')" data-i18n="common.learn_more">En savoir plus</button>
+                </div>
+            </div>
+            
+            <!-- AirSense Tech -->
+            <div class="project" data-domains-project="iot,ia,energie">
+                <img src="assets/projets/imProjetAirSenseTech.jpg" alt="AirSense Tech">
+                <div class="project-overlay">
+                    <h3 data-i18n="project.airsense.title">AirSense Tech System</h3>
+                    <p data-i18n="project.airsense.desc">Contrôle en temps réel de la qualité d'air dans un véhicule avec capteurs et interface connectée</p>
+                    <button class="btn-small" onclick="openProjectModal('airsense')" data-i18n="common.learn_more">En savoir plus</button>
+                </div>
+            </div>
+            
+            <!-- Chaîne de tri -->
+            <div class="project" data-domains-project="iot,energie">
+                <video autoplay muted loop playsinline>
+                    <source src="assets/projets/vid_chaine_de_tri.mp4" type="video/mp4">
+                </video>
+                <div class="project-overlay">
+                    <h3 data-i18n="project.tri.title">Chaîne de Tri Automatisée</h3>
+                    <p data-i18n="project.tri.desc">Projet d'automatisme industriel : tri des pièces via convoyeur, Raspberry Pi et caméra</p>
+                    <button class="btn-small" onclick="openProjectModal('tri')" data-i18n="common.learn_more">En savoir plus</button>
+                </div>
+            </div>
+            
+            <!-- Configuration CTR -->
+            <div class="project" data-domains-project="telecom">
+                <img src="assets/imConfigCTR8312erODU.jpg" alt="Configuration CTR">
+                <div class="project-overlay">
+                    <h3 data-i18n="project.ctr.title">Configuration CTR 8312 Aviat Network</h3>
+                    <p data-i18n="project.ctr.desc">Paramétrage d'équipement pour garantir qualité de service sur réseaux FH et fibre optique</p>
+                    <button class="btn-small" onclick="openProjectModal('ctr')" data-i18n="common.learn_more">En savoir plus</button>
+                </div>
+            </div>
+            
+            <!-- AGV Industriel -->
+            <div class="project" data-domains-project="iot,automatisme">
+                <video autoplay muted loop playsinline>
+                    <source src="assets/projets/vid_RobotOrganisateur.mp4" type="video/mp4">
+                </video>
+                <div class="project-overlay">
+                    <h3 data-i18n="project.agv.title">AGV Industriel (STM32)</h3>
+                    <p data-i18n="project.agv.desc">Prototype d'AGV autonome basé sur STM32, capable de suivre des rails et transporter des charges</p>
+                    <button class="btn-small" onclick="openProjectModal('agv')" data-i18n="common.learn_more">En savoir plus</button>
+                </div>
+            </div>
+            
+            <!-- Réseau PON -->
+            <div class="project" data-domains-project="telecom">
+                <img src="assets/TP/TP_FO0.png" alt="Réseau PON">
+                <div class="project-overlay">
+                    <h3 data-i18n="project.pon.title">Réseau Optique PON</h3>
+                    <p data-i18n="project.pon.desc">Étude et modélisation d'un réseau optique PON : calcul de budget optique, dispersion et couplage</p>
+                    <button class="btn-small" onclick="openProjectModal('pon')" data-i18n="common.learn_more">En savoir plus</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+   <!-- OUTILS -->
+<section id="outils" class="section alt fade-up circuit-bg">
+  <div class="container">
+    <span class="section-eyebrow">system.tools --list</span>
+    <h2 data-i18n="outils.title">Outils Techniques</h2>
+
+
+    <!-- EMBARQUÉ & ÉLECTRONIQUE (Profil dominant) -->
+    <div class="tools-category tools-category-core pcb-glow-panel">
+      <svg class="pcb-glow-trace" viewBox="0 0 1000 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <g fill="none" stroke="var(--pcb-cyan)" stroke-width="1.3" opacity="0.55">
+              <path d="M0,60 H220 V20 H480 V110 H700" />
+              <path d="M1000,50 H780 V140 H520 V80" />
+              <path d="M0,340 H160 V380 H420 V300 H650" />
+              <path d="M1000,360 H800 V280 H540 V340" />
+          </g>
+          <g fill="var(--pcb-cyan)" opacity="0.7">
+              <circle cx="220" cy="60" r="3.5" />
+              <circle cx="480" cy="20" r="3.5" />
+              <circle cx="700" cy="110" r="3.5" />
+              <circle cx="780" cy="50" r="3.5" />
+              <circle cx="520" cy="140" r="3.5" />
+              <circle cx="160" cy="340" r="3.5" />
+              <circle cx="420" cy="380" r="3.5" />
+              <circle cx="650" cy="300" r="3.5" />
+              <circle cx="800" cy="360" r="3.5" />
+              <circle cx="540" cy="280" r="3.5" />
+          </g>
+      </svg>
+      <h3><span data-i18n="outils.core.title">Électronique & Systèmes embarqués</span> <span class="cat-tag cat-tag-core" data-i18n="tag.core">CŒUR</span></h3>
+      <div class="tools-grid">
+        <div class="tool-card" data-tool="stm32">
+          <img src="assets/logos/im_stm32.png" alt="STM32">
+          <p>STM32</p>
+        </div>
+        <div class="tool-card" data-tool="arduino">
+          <img src="assets/logos/arduino.jpeg" alt="Arduino">
+          <p>Arduino</p>
+        </div>
+        <div class="tool-card" data-tool="esp32">
+          <img src="assets/logos/esp32.jpg" alt="ESP32">
+          <p>ESP32</p>
+        </div>
+        <div class="tool-card" data-tool="fpga">
+          <img src="assets/logos/fpga.png" alt="FPGA">
+          <p>FPGA</p>
+        </div>
+        <div class="tool-card" data-tool="quartus">
+          <img src="assets/logos/im_quartus.jpeg" alt="Quartus">
+          <p>Quartus</p>
+        </div>
+        <div class="tool-card" data-tool="vhdl">
+          <img src="assets/logos/vhdl.jpeg" alt="VHDL">
+          <p>VHDL</p>
+        </div>
+        <div class="tool-card" data-tool="keil">
+          <img src="assets/logos/keil_uvision5.jpeg" alt="Keil uVision">
+          <p>Keil uVision</p>
+        </div>
+        <div class="tool-card" data-tool="proteus">
+          <img src="assets/logos/proteus.png" alt="Proteus">
+          <p>Proteus</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- AUTOMATISME & IoT -->
+    <div class="tools-category">
+      <h3><span data-i18n="outils.autoiot.title">Automatisation & IoT</span> <span class="cat-tag cat-tag-support" data-i18n="tag.support">SUPPORT</span></h3>
+      <div class="tools-grid">
+        <div class="tool-card" data-tool="matlab">
+          <img src="assets/logos/im_matlab_simulink.jpg" alt="MATLAB Simulink">
+          <p>MATLAB / Simulink</p>
+        </div>
+        <div class="tool-card" data-tool="modelsim">
+          <img src="assets/logos/modelsim.jpg" alt="ModelSim">
+          <p>ModelSim</p>
+        </div>
+        <div class="tool-card" data-tool="raspberrypi">
+          <img src="assets/logos/raspberry_pi.png" alt="Raspberry Pi">
+          <p>Raspberry Pi</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TÉLÉCOMMUNICATION & RÉSEAUX -->
+    <div class="tools-category">
+      <h3><span data-i18n="outils.telecom.title">Télécommunication & Réseaux</span> <span class="cat-tag cat-tag-support" data-i18n="tag.support">SUPPORT</span></h3>
+      <div class="tools-grid">
+        <div class="tool-card" data-tool="atoll">
+          <img src="assets/logos/im_atoll.png" alt="Atoll">
+          <p>Atoll</p>
+        </div>
+        <div class="tool-card" data-tool="optisystem">
+          <img src="assets/logos/im_optisystem.jpeg" alt="OptiSystem">
+          <p>OptiSystem</p>
+        </div>
+        <div class="tool-card" data-tool="packettracer">
+          <img src="assets/logos/cisco_packet_tracer.jpeg" alt="Cisco Packet Tracer">
+          <p>Cisco Packet Tracer</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- LANGAGES & DÉVELOPPEMENT -->
+    <div class="tools-category">
+      <h3><span data-i18n="outils.dev.title">Langages & Développement</span> <span class="cat-tag cat-tag-support" data-i18n="tag.support">SUPPORT</span></h3>
+      <div class="tools-grid">
+        <div class="tool-card" data-tool="langages">
+          <img src="assets/logos/im_python_java_c_cpp.jpg" alt="Langages">
+          <p>C / C++ / Java / Python</p>
+        </div>
+        <div class="tool-card" data-tool="web">
+          <img src="assets/logos/im_html_css_js_php_sql.jpg" alt="Web">
+          <p>HTML / CSS / JS / PHP / SQL</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <!-- LICENCES & CERTIFICATIONS -->
+<section id="certifications" class="section fade-up">
+  <div class="container">
+    <h2 data-i18n="certifications.title">Licences & Certifications</h2>
+
+    <!-- ÉLECTRONIQUE & SYSTÈMES EMBARQUÉS -->
+    <div class="cert-category">
+      <h3 data-i18n="certifications.cat.embarque">Électronique & Systèmes Embarqués</h3>
+      <div class="cert-grid">
+        <div class="cert-card" data-cert="can">
+          <div class="cert-image-container">
+            <img src="./assets/certifications/canEtCanFD.png" onclick="openImageModal(this.src)" alt="CAN & CAN FD Protocol">
+          </div>
+          <div class="cert-info">
+            <h4>CAN & CAN FD Protocol</h4>
+            <button class="cert-detail-btn" data-cert="can" type="button" data-i18n="common.more_details">Voir les détails</button>
+          </div>
+        </div>
+
+        <div class="cert-card" data-cert="mplab">
+          <div class="cert-image-container">
+            <img src="./assets/certifications/MPLAB_Harmony_v3_Fundamentals.png" onclick="openImageModal(this.src)" alt="MPLAB Harmony v3">
+          </div>
+          <div class="cert-info">
+            <h4>MPLAB Harmony v3 Fundamentals</h4>
+            <button class="cert-detail-btn" data-cert="mplab" type="button" data-i18n="common.more_details">Voir les détails</button>
+          </div>
+        </div>
+
+        <div class="cert-card" data-cert="mpu">
+          <div class="cert-image-container">
+            <img src="assets/certifications/MPU_System_and_PCB_Design_Pitfalls_and_Solutions.png" onclick="openImageModal(this.src)" alt="MPU System & PCB Design">
+          </div>
+          <div class="cert-info">
+            <h4>MPU System & PCB Design</h4>
+            <button class="cert-detail-btn" data-cert="mpu" type="button" data-i18n="common.more_details">Voir les détails</button>
+          </div>
+        </div>
+
+        <div class="cert-card" data-cert="pcb">
+          <div class="cert-image-container">
+            <img src="assets/certifications/pcb.png" onclick="openImageModal(this.src)" alt="High-Speed PCB Design">
+          </div>
+          <div class="cert-info">
+            <h4>High-Speed PCB Design</h4>
+            <button class="cert-detail-btn" data-cert="pcb" type="button" data-i18n="common.more_details">Voir les détails</button>
+          </div>
+        </div>
+
+        <div class="cert-card" data-cert="fpga1">
+          <div class="cert-image-container">
+            <img src="assets/certifications/fpga1.png" onclick="openImageModal(this.src)" alt="Microchip PolarFire FPGA">
+          </div>
+          <div class="cert-info">
+            <h4>Microchip PolarFire® FPGA</h4>
+            <button class="cert-detail-btn" data-cert="fpga1" type="button" data-i18n="common.more_details">Voir les détails</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RÉSEAUX & TÉLÉCOMMUNICATIONS -->
+    <div class="cert-category">
+      <h3 data-i18n="certifications.cat.reseaux">Réseaux & Télécommunications</h3>
+      <div class="cert-grid">
+        <div class="cert-card" data-cert="ipaddr">
+          <div class="cert-image-container">
+            <img src="assets/certifications/IPAddressingRoutingAndNetworkManagement.png" onclick="openImageModal(this.src)" alt="IP Addressing & Routing">
+          </div>
+          <div class="cert-info">
+            <h4>IP Addressing & Routing</h4>
+            <button class="cert-detail-btn" data-cert="ipaddr" type="button" data-i18n="common.more_details">Voir les détails</button>
+          </div>
+        </div>
+
+        <div class="cert-card" data-cert="rf">
+          <div class="cert-image-container">
+            <img src="assets/certifications/Radio_Frequency_Applications.png" onclick="openImageModal(this.src)" alt="Radio Frequency Applications">
+          </div>
+          <div class="cert-info">
+            <h4>Radio Frequency Applications</h4>
+            <button class="cert-detail-btn" data-cert="rf" type="button" data-i18n="common.more_details">Voir les détails</button>
+          </div>
+        </div>
+
+        <!-- Optionnel : ajouter d'autres certifications si nécessaire -->
+      </div>
+    </div>
+  </div>
+</section>
+ <!--
+            <div class="cert-card">
+
+              <div class="cert-image-container">
+                <img src="assets/certifications/4g_lte.png" onclick="openImageModal(this.src)" alt="4G LTE Networks">
+              </div>
+              <div class="cert-info">
+                <h4>4G LTE Networks</h4>
+                <a href="#" target="_blank">Vérifier</a>
+              </div>
+            </div> -->
+          </div>
+        </div>
+
+        <!-- INFORMATIQUE -->
+        <div class="cert-category">
+         <!-- <h3>Informatique & Intelligence Artificielle</h3>
+          <div class="cert-grid">
+            <div class="cert-card">
+              <div class="cert-image-container">
+                <img src="assets/certifications/ml.png" onclick="openImageModal(this.src)" alt="Machine Learning">
+              </div>
+              <div class="cert-info">
+                <h4>Machine Learning</h4>
+                <a href="#" target="_blank">Vérifier</a>
+              </div>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-image-container">
+                <img src="assets/certifications/iiot.png" onclick="openImageModal(this.src)" alt="Industrial IoT">
+              </div>
+              <div class="cert-info">
+                <h4>Industrial IoT (IIoT)</h4>
+                <a href="#" target="_blank">Vérifier</a>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- RÉCOMPENSES -->
+    <section id="recompenses" class="section alt fade-up">
+        <div class="container">
+            <h2 data-i18n="recompenses.title">Récompenses & Distinctions</h2>
+            <div class="awards-grid">
+                <div class="award-card"><i class="fas fa-trophy"></i> <span data-i18n="award.1">2e Prix de l'innovation – JEJA AEBM Mohammedia 2022</span></div>
+                <div class="award-card"><i class="fas fa-trophy"></i> <span data-i18n="award.2">Mention Excellente – Innovation day FST Tanger 2022</span></div>
+                <div class="award-card"><i class="fas fa-graduation-cap"></i> <span data-i18n="award.3">Lauréat du programme Excellence Link Up Africa – Enabel</span></div>
+                <div class="award-card"><i class="fas fa-graduation-cap"></i> <span data-i18n="award.4">Participation – Hackathon de l'automobile - FST Fes 2024</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ASSOCIATIF -->
+    <section id="associatif" class="section fade-up">
+        <div class="container">
+            <h2 data-i18n="associatif.title">Expériences Associatives</h2>
+            <div class="assoc-grid">
+                <div class="assoc-card" data-assoc="aebm">
+                    <span data-i18n="assoc.aebm">2023/2024 : Secrétaire Général Adjoint du BE de l'AEBM Tanger</span>
+                    <button class="assoc-detail-btn" data-assoc="aebm" type="button" data-i18n="common.more_details">Voir les détails</button>
+                </div>
+                <div class="assoc-card" data-assoc="robotique">
+                    <span data-i18n="assoc.robotique">2023/2024 : Membre du Club Robotique & Avionique – FST Tanger</span>
+                    <button class="assoc-detail-btn" data-assoc="robotique" type="button" data-i18n="common.more_details">Voir les détails</button>
+                </div>
+                <div class="assoc-card" data-assoc="uei">
+                    <span data-i18n="assoc.uei">2024/2025 : Chargé aux affaires culturelles et sportives – Union des Étudiants Internationaux (FST Fès)</span>
+                    <button class="assoc-detail-btn" data-assoc="uei" type="button" data-i18n="common.more_details">Voir les détails</button>
+                </div>
+                <div class="assoc-card" data-assoc="genie">
+                    <span data-i18n="assoc.genie">2024/2025 : Membre du Club Génie Industriel et Club Sportif</span>
+                    <button class="assoc-detail-btn" data-assoc="genie" type="button" data-i18n="common.more_details">Voir les détails</button>
+                </div>
+                <div class="assoc-card" data-assoc="cesam">
+                    <span data-i18n="assoc.cesam">2024/2025 : Chargé aux affaires sportives – CESAM Fès</span>
+                    <button class="assoc-detail-btn" data-assoc="cesam" type="button" data-i18n="common.more_details">Voir les détails</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LANGUES & HOBBIES -->
+    <section id="langues" class="section alt fade-up">
+        <div class="container">
+            <h2 data-i18n="langues.title">Langues & Centres d'intérêt</h2>
+            <div class="lang-hobby-grid">
+                <div class="lang-card">
+                    <h3><i class="fas fa-language"></i> <span data-i18n="langues.langues">Langues</span></h3>
+                    <ul>
+                        <li data-i18n="langues.fr">Français – Courant</li>
+                        <li data-i18n="langues.en">Anglais – Professionnel</li>
+                        <li data-i18n="langues.es">Espagnol – Notions</li>
+                        <li data-i18n="langues.moore">Mooré / Dioula – Courant</li>
+                    </ul>
+                </div>
+                <div class="hobby-card">
+                    <h3><i class="fas fa-football-ball"></i> <span data-i18n="langues.hobbies">Centres d'intérêt</span></h3>
+                    <ul>
+                        <li data-i18n="hobby.1">Football & Athlétisme</li>
+                        <li data-i18n="hobby.2">Robotique & IA</li>
+                        <li data-i18n="hobby.3">Voyages & Découverte</li>
+                        <li data-i18n="hobby.4">Culture africaine & événements étudiants</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section fade-up">
+        <div class="container">
+            <h2 data-i18n="contact.title">Contact</h2>
+            <div id="form-message" class="form-message"></div>
+            <form action="" method="POST" class="contact-form" id="contact-form">
+                <input type="text" name="honeypot" style="display:none">
+                <input type="text" name="name" data-i18n-placeholder="contact.name" placeholder="Votre nom" required>
+                <input type="email" name="email" data-i18n-placeholder="contact.email" placeholder="Votre email" required>
+                <textarea name="message" data-i18n-placeholder="contact.message" placeholder="Votre message..." required></textarea>
+                <button type="submit" class="btn btn-primary" data-i18n="contact.send">Envoyer</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 M. Abass Sawadogo | <span data-i18n="footer.location">Fès, Maroc</span></p>
+    </footer>
+
+
+    <!-- MODAL PROJETS -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeProjectModal()">&times;</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- MODAL IMAGE -->
+    <div id="imageModal" class="image-modal">
+        <button class="image-modal-close" onclick="closeImageModal()">&times;</button>
+        <img class="image-modal-content" id="modalImage" alt="Certification">
+    </div>
+
+    <script>
+        // ==========================================
+        // LOADER
+        // ==========================================
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
+            }, 500);
+        });
+
+        // ==========================================
+        // THÈME (clair / sombre)
+        // ==========================================
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            const icon = document.querySelector('#theme-toggle i');
+            if (icon) icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            localStorage.setItem('theme', theme);
+        }
+
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        applyTheme(savedTheme);
+
+        document.getElementById('theme-toggle').addEventListener('click', () => {
+            const current = document.documentElement.getAttribute('data-theme');
+            applyTheme(current === 'dark' ? 'light' : 'dark');
+        });
+
+        // ==========================================
+        // LANGUE (FR / EN)
+        // ==========================================
+        const I18N = {
+            fr: {
+                'nav.profil': 'Profil', 'nav.formations': 'Formations', 'nav.experiences': 'Expériences',
+                'nav.competences': 'Compétences', 'nav.projets': 'Projets', 'nav.outils': 'Outils',
+                'nav.certifications': 'Certifications', 'nav.contact': 'Contact',
+                'hero.eyebrow': 'PROFIL // INGÉNIEUR ÉLECTRONIQUE & SYSTÈMES EMBARQUÉS',
+                'hero.role': 'Élève ingénieur en Systèmes Intelligents, Communicants et Mobiles',
+                'hero.subtitle': 'Spécialisé en Électronique et Systèmes Embarqués — Polyvalence en Télécommunications, Réseaux et Automatisme Industriel',
+                'hero.spec.automatisme': 'Automatisme',
+                'hero.btn.cv': 'Télécharger CV', 'hero.btn.contact': 'Contactez-moi', 'hero.btn.whatsapp': 'Par WhatsApp',
+                'profil.title': 'Profil',
+                'profil.text': "Étudiant en dernière année du cycle ingénieur en Systèmes Intelligents et Communicants, je possède une solide formation en électronique et systèmes embarqués : conception et programmation de microcontrôleurs (STM32, ESP32, Arduino), conception numérique sur FPGA, électronique analogique et de puissance, capteurs et instrumentation, ainsi que communication sans fil (RF, Wi-Fi, Bluetooth). À cette base technique s'ajoute une polyvalence acquise au fil de mes projets et stages, couvrant les télécommunications, les réseaux, l'automatisme industriel et le développement logiciel. À l'aise avec les outils de modélisation, simulation et analyse de performance de systèmes embarqués, je cherche un stage PFE pour participer à la conception, l'optimisation et le déploiement de solutions électroniques et embarquées innovantes.",
+                'formations.title': 'Formations',
+                'formations.fst_fes': 'Faculté des Sciences et Techniques de Fès',
+                'formations.fst_fes_degree': 'Cycle Ingénieur – Systèmes Intelligents et Communicants',
+                'formations.fst_tanger_degree': 'Licence en Génie Électrique et Systèmes Industriels',
+                'formations.lycee': 'Lycée Technique National A. S. Lamizana',
+                'formations.lycee_degree': 'Série F2 – Électronique',
+                'experiences.title': 'Expériences Professionnelles',
+                'filter.all': 'Tous', 'filter.mcu': 'Microcontrôleurs', 'filter.electronique': 'Électronique',
+                'filter.iot_connect': 'IoT & Connectivité', 'filter.automatisme': 'Automatisme',
+                'filter.iot_embarque': 'IoT & Embarqué', 'filter.ia_vision': 'IA & Vision',
+                'filter.energie': 'Énergie', 'filter.telecoms': 'Télécoms',
+                'common.more_details': 'Voir les détails', 'common.learn_more': 'En savoir plus',
+                'exp.telecel.title': 'Août – Sept 2025 : Stage PFA – Telecel Faso',
+                'exp.telecel.li1': 'Analyse et compréhension des réseaux de télécommunication opérateur',
+                'exp.telecel.li2': 'Étude et mesures des systèmes de transmission FH et fibre optique',
+                'exp.telecel.li3': 'Configuration et tests de modems radio et équipements CTR Aviat Networks',
+                'exp.telecel.li4': 'Évaluation de la performance et fiabilité des liaisons de transport',
+                'exp.renault.title': 'Avril – Juin 2024 : Stage PFE – Renault Tanger',
+                'exp.renault.li1': 'Conception et installation de circuits de protection contre microcoupures',
+                'exp.renault.li2': 'Réalisation de circuits de commutation alimentation principale / secours',
+                'exp.renault.li3': "Programmation d'automates pour basculement automatique",
+                'exp.renault.li4': 'Implémentation de dispositifs de sécurité sur lignes de production',
+                'exp.sonabel.title': "Juillet – Août 2023 : Stage d'initiation – SONABEL DCET",
+                'exp.sonabel.li1': 'Intervention sur systèmes de protection et contrôle-commande industriels',
+                'exp.sonabel.li2': 'Mesures et exploitation des compteurs et capteurs industriels',
+                'exp.sonabel.li3': 'Maintenance et suivi des transformateurs et équipements électriques',
+                'exp.sonabel.li4': 'Supervision et monitoring via systèmes SCADA',
+                'comp.core.title': 'Électronique & Systèmes Embarqués',
+                'comp.support.title': 'Polyvalence & Compétences Complémentaires',
+                'tag.core': 'CŒUR', 'tag.support': 'SUPPORT',
+                'skill.mcu': 'Microcontrôleurs : STM32, ESP32, Arduino',
+                'skill.fpga': 'Conception numérique & FPGA : VHDL, Quartus',
+                'skill.analognum': 'Électronique analogique et numérique',
+                'skill.power': 'Électronique de puissance',
+                'skill.sensors': 'Capteurs, instrumentation et acquisition de données',
+                'skill.wireless': 'Communication sans fil : RF, Wi-Fi, Bluetooth',
+                'skill.rtos': 'Systèmes temps réel : FreeRTOS',
+                'skill.iot': 'IoT et objets connectés',
+                'skill.simu': 'Simulation électronique : Proteus, MATLAB/Simulink',
+                'skill.vision': 'Vision embarquée : OpenCV, Python',
+                'skill.telecom': 'Télécommunications RF, FH et Fibre Optique',
+                'skill.pon': 'Réseaux optiques PON/GPON',
+                'skill.netsim': 'Simulation réseaux : Atoll, Cisco Packet Tracer',
+                'skill.automation': 'Automatisation industrielle et contrôle-commande',
+                'skill.scada': 'Supervision & SCADA industriel',
+                'skill.webdev': 'Développement Web & Mobile : Spring Boot, React',
+                'skill.prog': 'Programmation : C, C++, Python, Java',
+                'projets.title': 'Projets Académiques & Personnels',
+                'project.solar.title': 'Smart Solar System',
+                'project.solar.desc': "Optimisation intelligente d'installation solaire avec suivi et contrôle des performances en temps réel",
+                'project.airsense.title': 'AirSense Tech System',
+                'project.airsense.desc': "Contrôle en temps réel de la qualité d'air dans un véhicule avec capteurs et interface connectée",
+                'project.tri.title': 'Chaîne de Tri Automatisée',
+                'project.tri.desc': "Projet d'automatisme industriel : tri des pièces via convoyeur, Raspberry Pi et caméra",
+                'project.ctr.title': 'Configuration CTR 8312 Aviat Network',
+                'project.ctr.desc': "Paramétrage d'équipement pour garantir qualité de service sur réseaux FH et fibre optique",
+                'project.agv.title': 'AGV Industriel (STM32)',
+                'project.agv.desc': "Prototype d'AGV autonome basé sur STM32, capable de suivre des rails et transporter des charges",
+                'project.pon.title': 'Réseau Optique PON',
+                'project.pon.desc': "Étude et modélisation d'un réseau optique PON : calcul de budget optique, dispersion et couplage",
+                'outils.title': 'Outils Techniques',
+                'outils.core.title': 'Électronique & Systèmes embarqués',
+                'outils.autoiot.title': 'Automatisation & IoT',
+                'outils.telecom.title': 'Télécommunication & Réseaux',
+                'outils.dev.title': 'Langages & Développement',
+                'certifications.title': 'Licences & Certifications',
+                'certifications.cat.embarque': 'Électronique & Systèmes Embarqués',
+                'certifications.cat.reseaux': 'Réseaux & Télécommunications',
+                'recompenses.title': 'Récompenses & Distinctions',
+                'award.1': "2e Prix de l'innovation – JEJA AEBM Mohammedia 2022",
+                'award.2': 'Mention Excellente – Innovation day FST Tanger 2022',
+                'award.3': 'Lauréat du programme Excellence Link Up Africa – Enabel',
+                'award.4': "Participation – Hackathon de l'automobile - FST Fes 2024",
+                'associatif.title': 'Expériences Associatives',
+                'assoc.aebm': "2023/2024 : Secrétaire Général Adjoint du BE de l'AEBM Tanger",
+                'assoc.robotique': '2023/2024 : Membre du Club Robotique & Avionique – FST Tanger',
+                'assoc.uei': '2024/2025 : Chargé aux affaires culturelles et sportives – Union des Étudiants Internationaux (FST Fès)',
+                'assoc.genie': '2024/2025 : Membre du Club Génie Industriel et Club Sportif',
+                'assoc.cesam': '2024/2025 : Chargé aux affaires sportives – CESAM Fès',
+                'langues.title': "Langues & Centres d'intérêt",
+                'langues.langues': 'Langues', 'langues.hobbies': "Centres d'intérêt",
+                'langues.fr': 'Français – Courant', 'langues.en': 'Anglais – Professionnel',
+                'langues.es': 'Espagnol – Notions', 'langues.moore': 'Mooré / Dioula – Courant',
+                'hobby.1': 'Football & Athlétisme', 'hobby.2': 'Robotique & IA',
+                'hobby.3': 'Voyages & Découverte', 'hobby.4': 'Culture africaine & événements étudiants',
+                'contact.title': 'Contact', 'contact.name': 'Votre nom', 'contact.email': 'Votre email',
+                'contact.message': 'Votre message...', 'contact.send': 'Envoyer',
+                'footer.location': 'Fès, Maroc',
+                'modal.context': 'Contexte', 'modal.objectives': 'Objectifs',
+                'modal.technologies': 'Technologies utilisées', 'modal.results': 'Résultats',
+                'modal.what_i_can_do': 'Ce que je sais faire avec',
+                'modal.what_i_learned': 'Ce que cette expérience m\'a apporté',
+                'msg.required': 'Veuillez remplir tous les champs requis.',
+                'msg.invalid_email': 'Veuillez entrer un email valide.'
+            },
+            en: {
+                'nav.profil': 'Profile', 'nav.formations': 'Education', 'nav.experiences': 'Experience',
+                'nav.competences': 'Skills', 'nav.projets': 'Projects', 'nav.outils': 'Tools',
+                'nav.certifications': 'Certifications', 'nav.contact': 'Contact',
+                'hero.eyebrow': 'PROFILE // ELECTRONICS & EMBEDDED SYSTEMS ENGINEER',
+                'hero.role': 'Engineering student in Intelligent, Communicating and Mobile Systems',
+                'hero.subtitle': 'Specialized in Electronics and Embedded Systems — Versatile in Telecommunications, Networks and Industrial Automation',
+                'hero.spec.automatisme': 'Automation',
+                'hero.btn.cv': 'Download CV', 'hero.btn.contact': 'Contact me', 'hero.btn.whatsapp': 'On WhatsApp',
+                'profil.title': 'Profile',
+                'profil.text': "Final-year engineering student in Intelligent and Communicating Systems, I have a solid background in electronics and embedded systems: microcontroller design and programming (STM32, ESP32, Arduino), digital design on FPGA, analog and power electronics, sensors and instrumentation, as well as wireless communication (RF, Wi-Fi, Bluetooth). This technical foundation is complemented by versatility gained through my projects and internships, covering telecommunications, networks, industrial automation and software development. Comfortable with modeling, simulation and performance analysis tools for embedded systems, I am looking for a final-year internship (PFE) to take part in the design, optimization and deployment of innovative electronic and embedded solutions.",
+                'formations.title': 'Education',
+                'formations.fst_fes': 'Faculty of Sciences and Techniques of Fès',
+                'formations.fst_fes_degree': 'Engineering Degree – Intelligent and Communicating Systems',
+                'formations.fst_tanger_degree': "Bachelor's in Electrical Engineering and Industrial Systems",
+                'formations.lycee': 'A. S. Lamizana National Technical High School',
+                'formations.lycee_degree': 'F2 Track – Electronics',
+                'experiences.title': 'Professional Experience',
+                'filter.all': 'All', 'filter.mcu': 'Microcontrollers', 'filter.electronique': 'Electronics',
+                'filter.iot_connect': 'IoT & Connectivity', 'filter.automatisme': 'Automation',
+                'filter.iot_embarque': 'IoT & Embedded', 'filter.ia_vision': 'AI & Vision',
+                'filter.energie': 'Energy', 'filter.telecoms': 'Telecoms',
+                'common.more_details': 'View details', 'common.learn_more': 'Learn more',
+                'exp.telecel.title': 'Aug – Sep 2025: PFA Internship – Telecel Faso',
+                'exp.telecel.li1': 'Analysis and understanding of telecom operator networks',
+                'exp.telecel.li2': 'Study and measurement of microwave (FH) and fiber optic transmission systems',
+                'exp.telecel.li3': 'Configuration and testing of radio modems and Aviat Networks CTR equipment',
+                'exp.telecel.li4': 'Assessment of transport link performance and reliability',
+                'exp.renault.title': 'Apr – Jun 2024: PFE Internship – Renault Tangier',
+                'exp.renault.li1': 'Design and installation of protection circuits against micro-outages',
+                'exp.renault.li2': 'Building main/backup power switching circuits',
+                'exp.renault.li3': 'PLC programming for automatic switchover',
+                'exp.renault.li4': 'Implementation of safety devices on production lines',
+                'exp.sonabel.title': 'Jul – Aug 2023: Introductory Internship – SONABEL DCET',
+                'exp.sonabel.li1': 'Work on industrial protection and control systems',
+                'exp.sonabel.li2': 'Measurement and operation of industrial meters and sensors',
+                'exp.sonabel.li3': 'Maintenance and monitoring of transformers and electrical equipment',
+                'exp.sonabel.li4': 'Supervision and monitoring via SCADA systems',
+                'comp.core.title': 'Electronics & Embedded Systems',
+                'comp.support.title': 'Versatility & Complementary Skills',
+                'tag.core': 'CORE', 'tag.support': 'SUPPORT',
+                'skill.mcu': 'Microcontrollers: STM32, ESP32, Arduino',
+                'skill.fpga': 'Digital design & FPGA: VHDL, Quartus',
+                'skill.analognum': 'Analog and digital electronics',
+                'skill.power': 'Power electronics',
+                'skill.sensors': 'Sensors, instrumentation and data acquisition',
+                'skill.wireless': 'Wireless communication: RF, Wi-Fi, Bluetooth',
+                'skill.rtos': 'Real-time systems: FreeRTOS',
+                'skill.iot': 'IoT and connected devices',
+                'skill.simu': 'Electronic simulation: Proteus, MATLAB/Simulink',
+                'skill.vision': 'Embedded vision: OpenCV, Python',
+                'skill.telecom': 'RF, microwave (FH) and fiber optic telecommunications',
+                'skill.pon': 'Optical networks PON/GPON',
+                'skill.netsim': 'Network simulation: Atoll, Cisco Packet Tracer',
+                'skill.automation': 'Industrial automation and process control',
+                'skill.scada': 'Industrial supervision & SCADA',
+                'skill.webdev': 'Web & Mobile development: Spring Boot, React',
+                'skill.prog': 'Programming: C, C++, Python, Java',
+                'projets.title': 'Academic & Personal Projects',
+                'project.solar.title': 'Smart Solar System',
+                'project.solar.desc': 'Smart optimization of a solar installation with real-time performance tracking and control',
+                'project.airsense.title': 'AirSense Tech System',
+                'project.airsense.desc': 'Real-time in-vehicle air quality control with sensors and a connected interface',
+                'project.tri.title': 'Automated Sorting Line',
+                'project.tri.desc': 'Industrial automation project: part sorting via conveyor, Raspberry Pi and camera',
+                'project.ctr.title': 'CTR 8312 Aviat Network Configuration',
+                'project.ctr.desc': 'Equipment configuration to ensure quality of service on microwave and fiber optic networks',
+                'project.agv.title': 'Industrial AGV (STM32)',
+                'project.agv.desc': 'Autonomous AGV prototype based on STM32, able to follow tracks and carry loads',
+                'project.pon.title': 'PON Optical Network',
+                'project.pon.desc': 'Study and modeling of a PON optical network: optical budget, dispersion and coupling calculations',
+                'outils.title': 'Technical Tools',
+                'outils.core.title': 'Electronics & Embedded Systems',
+                'outils.autoiot.title': 'Automation & IoT',
+                'outils.telecom.title': 'Telecommunications & Networks',
+                'outils.dev.title': 'Languages & Development',
+                'certifications.title': 'Licenses & Certifications',
+                'certifications.cat.embarque': 'Electronics & Embedded Systems',
+                'certifications.cat.reseaux': 'Networks & Telecommunications',
+                'recompenses.title': 'Awards & Honors',
+                'award.1': '2nd Innovation Prize – JEJA AEBM Mohammedia 2022',
+                'award.2': 'Excellence Mention – Innovation Day FST Tangier 2022',
+                'award.3': 'Graduate of the Link Up Africa Excellence Program – Enabel',
+                'award.4': 'Participation – Automotive Hackathon - FST Fes 2024',
+                'associatif.title': 'Associative Experience',
+                'assoc.aebm': "2023/2024: Assistant Secretary General of the AEBM Tangier Executive Board",
+                'assoc.robotique': '2023/2024: Member of the Robotics & Avionics Club – FST Tangier',
+                'assoc.uei': '2024/2025: In charge of cultural and sports affairs – International Students Union (FST Fès)',
+                'assoc.genie': '2024/2025: Member of the Industrial Engineering Club and Sports Club',
+                'assoc.cesam': '2024/2025: In charge of sports affairs – CESAM Fès',
+                'langues.title': 'Languages & Interests',
+                'langues.langues': 'Languages', 'langues.hobbies': 'Interests',
+                'langues.fr': 'French – Fluent', 'langues.en': 'English – Professional',
+                'langues.es': 'Spanish – Basic', 'langues.moore': 'Mooré / Dioula – Fluent',
+                'hobby.1': 'Football & Athletics', 'hobby.2': 'Robotics & AI',
+                'hobby.3': 'Travel & Discovery', 'hobby.4': 'African culture & student events',
+                'contact.title': 'Contact', 'contact.name': 'Your name', 'contact.email': 'Your email',
+                'contact.message': 'Your message...', 'contact.send': 'Send',
+                'footer.location': 'Fès, Morocco',
+                'modal.context': 'Context', 'modal.objectives': 'Objectives',
+                'modal.technologies': 'Technologies used', 'modal.results': 'Results',
+                'modal.what_i_can_do': 'What I can do with this',
+                'modal.what_i_learned': 'What this experience taught me',
+                'msg.required': 'Please fill in all required fields.',
+                'msg.invalid_email': 'Please enter a valid email address.'
+            }
+        };
+
+        let currentLang = localStorage.getItem('lang') || 'fr';
+
+        function t(key) {
+            return (I18N[currentLang] && I18N[currentLang][key]) || key;
+        }
+
+        function applyLanguage(lang) {
+            currentLang = lang;
+            document.documentElement.setAttribute('lang', lang);
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (I18N[lang] && I18N[lang][key] !== undefined) {
+                    el.textContent = I18N[lang][key];
+                }
+            });
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (I18N[lang] && I18N[lang][key] !== undefined) {
+                    el.placeholder = I18N[lang][key];
+                }
+            });
+            const label = document.getElementById('lang-toggle-label');
+            if (label) label.textContent = lang === 'fr' ? 'EN' : 'FR';
+            localStorage.setItem('lang', lang);
+
+            // Fermer une éventuelle modale ouverte pour éviter un contenu figé dans l'ancienne langue
+            const openModal = document.getElementById('project-modal');
+            if (openModal && openModal.classList.contains('active')) {
+                openModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        applyLanguage(currentLang);
+
+        document.getElementById('lang-toggle').addEventListener('click', () => {
+            applyLanguage(currentLang === 'fr' ? 'en' : 'fr');
+        });
+
+        // ==========================================
+        // DONNÉES DE DÉTAIL — Compétences / Outils /
+        // Certifications / Expériences / Associatif
+        // ==========================================
+        const skillDetails = {
+            mcu: { fr: "Développement firmware bas niveau et intermédiaire sur STM32, ESP32 et Arduino : gestion des périphériques (GPIO, ADC, PWM, timers, interruptions), communication série et intégration de capteurs/actionneurs pour des systèmes embarqués complets.", en: "Low- and mid-level firmware development on STM32, ESP32 and Arduino: peripheral management (GPIO, ADC, PWM, timers, interrupts), serial communication and sensor/actuator integration for complete embedded systems." },
+            fpga: { fr: "Conception de circuits numériques synchrones en VHDL, simulation et implémentation sur cartes FPGA via Quartus : machines à états, chemins de données, et logique combinatoire/séquentielle optimisée.", en: "Design of synchronous digital circuits in VHDL, simulation and implementation on FPGA boards using Quartus: state machines, datapaths, and optimized combinational/sequential logic." },
+            analognum: { fr: "Analyse et conception de circuits analogiques (amplification, filtrage, conditionnement de signal) et numériques (logique combinatoire/séquentielle), avec dimensionnement de composants et vérification par simulation.", en: "Analysis and design of analog circuits (amplification, filtering, signal conditioning) and digital circuits (combinational/sequential logic), including component sizing and simulation verification." },
+            power: { fr: "Conception de circuits d'alimentation et de commutation de puissance (protection contre microcoupures, bascule secours/principal), dimensionnement de composants de puissance et intégration en environnement industriel.", en: "Design of power supply and switching circuits (micro-outage protection, backup/main switchover), power component sizing and integration in industrial environments." },
+            sensors: { fr: "Interfaçage de capteurs analogiques et numériques (température, pression, gaz, ultrason...), acquisition de données et traitement du signal pour applications de mesure et de contrôle en temps réel.", en: "Interfacing analog and digital sensors (temperature, pressure, gas, ultrasonic...), data acquisition and signal processing for real-time measurement and control applications." },
+            wireless: { fr: "Mise en œuvre de liaisons sans fil (Wi-Fi, Bluetooth, RF) pour la remontée de données de capteurs et le pilotage à distance d'objets connectés, avec attention à la fiabilité et à la consommation.", en: "Implementation of wireless links (Wi-Fi, Bluetooth, RF) to transmit sensor data and remotely control connected devices, with attention to reliability and power consumption." },
+            rtos: { fr: "Structuration d'applications embarquées multi-tâches sous FreeRTOS : gestion de tâches, files de messages et sémaphores pour garantir un comportement temps réel déterministe.", en: "Structuring multi-task embedded applications under FreeRTOS: task management, message queues and semaphores to ensure deterministic real-time behavior." },
+            iot: { fr: "Conception de chaînes IoT complètes : capteur → microcontrôleur → protocole (MQTT) → interface de supervision, pour du monitoring et du contrôle à distance.", en: "Design of complete IoT chains: sensor → microcontroller → protocol (MQTT) → monitoring interface, for remote monitoring and control." },
+            simu: { fr: "Simulation de circuits électroniques (Proteus) et de systèmes dynamiques (MATLAB/Simulink) avant réalisation physique, pour valider le comportement et optimiser la conception.", en: "Simulation of electronic circuits (Proteus) and dynamic systems (MATLAB/Simulink) before physical implementation, to validate behavior and optimize design." },
+            vision: { fr: "Développement d'applications de vision embarquée avec OpenCV et Python : détection, classification et contrôle qualité en temps réel sur systèmes à ressources limitées.", en: "Development of embedded vision applications with OpenCV and Python: real-time detection, classification and quality control on resource-constrained systems." },
+            telecom: { fr: "Étude et mesure de systèmes de transmission RF, faisceaux hertziens (FH) et fibre optique : configuration d'équipements et évaluation de la qualité de service.", en: "Study and measurement of RF transmission systems, microwave links (FH) and optical fiber: equipment configuration and quality-of-service assessment." },
+            pon: { fr: "Dimensionnement et modélisation de réseaux optiques passifs (PON/GPON) : calcul de budget optique, choix de composants et simulation de performance.", en: "Sizing and modeling of passive optical networks (PON/GPON): optical budget calculation, component selection and performance simulation." },
+            netsim: { fr: "Simulation de réseaux radio et filaires avec Atoll et Cisco Packet Tracer : planification cellulaire, configuration d'équipements et test de scénarios réseau.", en: "Simulation of radio and wired networks with Atoll and Cisco Packet Tracer: cellular planning, equipment configuration and network scenario testing." },
+            automation: { fr: "Programmation d'automates industriels et conception de logiques de commande pour des processus automatisés (tri, bascule d'alimentation, sécurité de ligne).", en: "Programming of industrial PLCs and design of control logic for automated processes (sorting, power switchover, line safety)." },
+            scada: { fr: "Supervision de processus industriels via systèmes SCADA : suivi de capteurs/compteurs, visualisation en temps réel et remontée d'alarmes.", en: "Supervision of industrial processes via SCADA systems: sensor/meter monitoring, real-time visualization and alarm reporting." },
+            webdev: { fr: "Développement d'interfaces web et mobiles avec Spring Boot et React pour des applications de supervision, de comparaison ou de gestion de données.", en: "Development of web and mobile interfaces with Spring Boot and React for monitoring, comparison, or data management applications." },
+            prog: { fr: "Programmation générale en C, C++, Python et Java : logique embarquée bas niveau, scripts de traitement de données et développement d'applications.", en: "General-purpose programming in C, C++, Python and Java: low-level embedded logic, data processing scripts and application development." }
+        };
+
+        const toolDetails = {
+            stm32: { fr: "Développement firmware sur microcontrôleurs STM32 (registres, périphériques, HAL) pour des applications embarquées critiques et temps réel.", en: "Firmware development on STM32 microcontrollers (registers, peripherals, HAL) for critical, real-time embedded applications." },
+            arduino: { fr: "Prototypage rapide de systèmes embarqués et interfaçage de capteurs/actionneurs pour projets académiques et personnels.", en: "Rapid prototyping of embedded systems and sensor/actuator interfacing for academic and personal projects." },
+            esp32: { fr: "Développement d'objets connectés Wi-Fi/Bluetooth avec ESP32 : acquisition de données et communication vers des plateformes IoT.", en: "Development of Wi-Fi/Bluetooth connected devices with ESP32: data acquisition and communication to IoT platforms." },
+            fpga: { fr: "Implémentation de logique numérique personnalisée sur circuits FPGA, pour des traitements parallèles et déterministes.", en: "Implementation of custom digital logic on FPGA chips, for parallel and deterministic processing." },
+            quartus: { fr: "Synthèse, placement-routage et programmation de FPGA Intel/Altera à partir de descriptions VHDL.", en: "Synthesis, place-and-route and programming of Intel/Altera FPGAs from VHDL descriptions." },
+            vhdl: { fr: "Description de matériel numérique (VHDL) pour la conception de circuits synchrones testés en simulation avant implémentation.", en: "Hardware description (VHDL) for designing synchronous circuits, tested in simulation before implementation." },
+            keil: { fr: "Environnement de développement et débogage firmware pour microcontrôleurs ARM (STM32), compilation et mise au point pas-à-pas.", en: "Firmware development and debugging environment for ARM microcontrollers (STM32), compilation and step-by-step debugging." },
+            proteus: { fr: "Simulation de schémas électroniques et de firmware avant réalisation physique, pour valider un circuit sans risque de composants.", en: "Simulation of electronic schematics and firmware before physical build, to validate a circuit without risking components." },
+            matlab: { fr: "Modélisation, simulation et analyse de systèmes dynamiques (asservissement, contrôle PID, réseaux) sous MATLAB/Simulink.", en: "Modeling, simulation and analysis of dynamic systems (control loops, PID control, networks) under MATLAB/Simulink." },
+            modelsim: { fr: "Simulation fonctionnelle et temporelle de circuits VHDL avant synthèse FPGA.", en: "Functional and timing simulation of VHDL circuits before FPGA synthesis." },
+            raspberrypi: { fr: "Plateforme de calcul embarqué sous Linux pour vision par ordinateur, traitement de données et contrôle de systèmes automatisés.", en: "Embedded Linux computing platform for computer vision, data processing and automated system control." },
+            atoll: { fr: "Planification et dimensionnement de réseaux radio cellulaires : couverture, capacité et interférences.", en: "Planning and sizing of cellular radio networks: coverage, capacity and interference." },
+            optisystem: { fr: "Simulation de liaisons optiques (PON, longue distance) : calcul de budget optique et analyse de dispersion.", en: "Simulation of optical links (PON, long-haul): optical budget calculation and dispersion analysis." },
+            packettracer: { fr: "Simulation de réseaux informatiques (routage, adressage IP, configuration d'équipements Cisco).", en: "Simulation of computer networks (routing, IP addressing, Cisco equipment configuration)." },
+            langages: { fr: "Programmation bas niveau (C/C++) pour l'embarqué et développement applicatif (Java/Python) pour le traitement de données et les scripts.", en: "Low-level programming (C/C++) for embedded systems and application development (Java/Python) for data processing and scripting." },
+            web: { fr: "Développement d'interfaces web (front/back) pour des tableaux de bord de supervision et applications de gestion.", en: "Development of web interfaces (front/back) for monitoring dashboards and management applications." }
+        };
+
+        const certDetails = {
+            can: { fr: "Compréhension approfondie du protocole CAN et CAN FD : trames, arbitrage, détection d'erreurs — utilisé pour les réseaux de communication embarqués automobile/industriel.", en: "In-depth understanding of the CAN and CAN FD protocol: frames, arbitration, error detection — used for automotive/industrial embedded communication networks." },
+            mplab: { fr: "Prise en main du framework MPLAB Harmony v3 pour le développement structuré d'applications sur microcontrôleurs Microchip.", en: "Hands-on with the MPLAB Harmony v3 framework for structured application development on Microchip microcontrollers." },
+            mpu: { fr: "Bonnes pratiques de conception de systèmes à microprocesseur et de circuits imprimés (PCB) : pièges courants et solutions.", en: "Best practices for microprocessor system and PCB design: common pitfalls and solutions." },
+            pcb: { fr: "Techniques de conception de circuits imprimés haute vitesse : intégrité du signal, impédance contrôlée, routage différentiel.", en: "High-speed PCB design techniques: signal integrity, controlled impedance, differential routing." },
+            fpga1: { fr: "Fondamentaux des FPGA Microchip PolarFire® : architecture, flux de conception et cas d'usage basse consommation.", en: "Fundamentals of Microchip PolarFire® FPGAs: architecture, design flow and low-power use cases." },
+            ipaddr: { fr: "Adressage IP, routage et gestion de réseaux : sous-réseaux, tables de routage et supervision d'infrastructure réseau.", en: "IP addressing, routing and network management: subnetting, routing tables and network infrastructure supervision." },
+            rf: { fr: "Applications des radiofréquences : propagation, liaisons hertziennes et dimensionnement d'antennes pour les télécommunications.", en: "Radio frequency applications: propagation, microwave links and antenna sizing for telecommunications." }
+        };
+
+        const expDetails = {
+            telecel: { fr: "Immersion dans l'exploitation d'un réseau opérateur télécom : compréhension des architectures de transport (FH, fibre), configuration d'équipements CTR Aviat Networks, mesures de performance et diagnostic de liaisons. Un stage formateur sur la fiabilité et la qualité de service des réseaux de transport.", en: "Immersion in the operation of a telecom operator network: understanding transport architectures (microwave, fiber), configuring Aviat Networks CTR equipment, performance measurements and link diagnostics. A formative internship on the reliability and quality of service of transport networks." },
+            renault: { fr: "Stage de fin d'études centré sur la fiabilité électrique des lignes de production : conception de circuits de protection contre les microcoupures, réalisation de systèmes de bascule alimentation principale/secours, programmation d'automates et intégration de dispositifs de sécurité. Une expérience concrète de l'électrotechnique industrielle en environnement automobile.", en: "End-of-studies internship focused on the electrical reliability of production lines: designing protection circuits against micro-outages, building main/backup power switchover systems, PLC programming, and integrating safety devices. Hands-on experience of industrial electrical engineering in an automotive environment." },
+            sonabel: { fr: "Découverte du secteur de l'énergie électrique : intervention sur des systèmes de protection et de contrôle-commande, exploitation de compteurs et capteurs industriels, maintenance de transformateurs, et supervision via SCADA. Une première approche du génie électrique à l'échelle industrielle.", en: "Introduction to the electrical energy sector: working on protection and control systems, operating industrial meters and sensors, transformer maintenance, and SCADA supervision. A first hands-on approach to electrical engineering at industrial scale." }
+        };
+
+        const assocDetails = {
+            aebm: { fr: "Rôle de coordination au sein du bureau exécutif de l'association des étudiants burkinabè au Maroc (AEBM Tanger) : organisation d'événements, gestion administrative et coordination d'équipe.", en: "Coordination role within the executive board of the Association of Burkinabe Students in Morocco (AEBM Tangier): event organization, administrative management and team coordination." },
+            robotique: { fr: "Participation aux activités du Club Robotique & Avionique de la FST Tanger : conception de prototypes, travail d'équipe technique et préparation de démonstrations/concours.", en: "Participation in the activities of the Robotics & Avionics Club at FST Tangier: prototype design, technical teamwork and preparation of demos/competitions." },
+            uei: { fr: "Organisation d'événements culturels et sportifs pour la communauté étudiante internationale de la FST Fès : planification, communication et coordination logistique.", en: "Organizing cultural and sports events for the international student community at FST Fès: planning, communication and logistics coordination." },
+            genie: { fr: "Membre actif du Club Génie Industriel et du Club Sportif : participation à des projets étudiants et à la vie associative du campus.", en: "Active member of the Industrial Engineering Club and the Sports Club: participation in student projects and campus community life." },
+            cesam: { fr: "Responsable des affaires sportives au sein de CESAM Fès : organisation d'activités sportives et animation de la vie étudiante.", en: "In charge of sports affairs within CESAM Fès: organizing sports activities and student life events." }
+        };
+
+        function openInfoModal(titleText, sectionLabelKey, bodyText) {
+            const m = document.getElementById('project-modal');
+            const mb = document.getElementById('modal-body');
+            mb.innerHTML = `
+                <h2 class="modal-title">${titleText}</h2>
+                <div class="modal-section">
+                    <h4>${t(sectionLabelKey)}</h4>
+                    <p>${bodyText}</p>
+                </div>
+            `;
+            m.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        document.querySelectorAll('.skill-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const id = card.dataset.skill;
+                const textEl = card.querySelector('.skill-text');
+                const detail = skillDetails[id];
+                if (!detail) return;
+                openInfoModal(textEl.textContent, 'modal.what_i_can_do', detail[currentLang]);
+            });
+        });
+
+        document.querySelectorAll('.tool-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const id = card.dataset.tool;
+                const label = card.querySelector('p');
+                const detail = toolDetails[id];
+                if (!detail) return;
+                openInfoModal(label.textContent, 'modal.what_i_can_do', detail[currentLang]);
+            });
+        });
+
+        document.querySelectorAll('.cert-detail-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const id = btn.dataset.cert;
+                const title = btn.closest('.cert-card').querySelector('h4').textContent;
+                const detail = certDetails[id];
+                if (!detail) return;
+                openInfoModal(title, 'modal.what_i_learned', detail[currentLang]);
+            });
+        });
+
+        document.querySelectorAll('.exp-detail-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const id = btn.dataset.detail;
+                const title = btn.closest('.exp-card').querySelector('h3').textContent;
+                const detail = expDetails[id];
+                if (!detail) return;
+                openInfoModal(title, 'modal.what_i_learned', detail[currentLang]);
+            });
+        });
+
+        document.querySelectorAll('.assoc-detail-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const id = btn.dataset.assoc;
+                const title = btn.closest('.assoc-card').querySelector('span').textContent;
+                const detail = assocDetails[id];
+                if (!detail) return;
+                openInfoModal(title, 'modal.what_i_learned', detail[currentLang]);
+            });
+        });
+
+        // ==========================================
+        // NAVBAR - SCROLL & MOBILE
+        // ==========================================
+        const navbar = document.getElementById('navbar');
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // ==========================================
+        // SCROLL SPY
+        // ==========================================
+        const sections = document.querySelectorAll('section[id]');
+
+        function scrollActive() {
+            const scrollY = window.pageYOffset;
+
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 100;
+                const sectionId = section.getAttribute('id');
+
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    document.querySelector('.nav-link[href*=' + sectionId + ']')?.classList.add('active');
+                } else {
+                    document.querySelector('.nav-link[href*=' + sectionId + ']')?.classList.remove('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', scrollActive);
+
+        // ==========================================
+        // FADE IN ANIMATIONS
+        // ==========================================
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in, .fade-up').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ==========================================
+        // PARALLAX HERO
+        // ==========================================
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxBg = document.querySelector('.parallax-bg');
+            
+            if (parallaxBg && scrolled < window.innerHeight) {
+                parallaxBg.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // ==========================================
+        // TYPING ANIMATION
+        // ==========================================
+        const text = "SAWADOGO Mahmoud Abass";
+        const typingElement = document.getElementById('typing-text');
+        let index = 0;
+
+        function typeWriter() {
+            if (index < text.length) {
+                typingElement.textContent += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+
+        window.addEventListener('load', typeWriter);
+
+        // ==========================================
+        // FILTRES EXPÉRIENCES
+        // ==========================================
+        const filterButtons = document.querySelectorAll('.filter-btn[data-filter]');
+        const expCards = document.querySelectorAll('.exp-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter');
+
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                expCards.forEach(card => {
+                    const domains = card.getAttribute('data-domains').split(',');
+                    
+                    if (filter === 'all' || domains.includes(filter)) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        // ==========================================
+        // FILTRES PROJETS
+        // ==========================================
+        const filterButtonsProjects = document.querySelectorAll('.filter-btn[data-filter-project]');
+        const projectCards = document.querySelectorAll('.project');
+
+        filterButtonsProjects.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter-project');
+
+                filterButtonsProjects.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                projectCards.forEach(card => {
+                    const domains = card.getAttribute('data-domains-project').split(',');
+                    
+                    if (filter === 'all' || domains.includes(filter)) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        // ==========================================
+        // BADGES DE DOMAINE + REPÈRE "PROJET EMBARQUÉ"
+        // ==========================================
+        const domainMeta = {
+            telecom: { label: 'Télécom', icon: 'fa-tower-broadcast' },
+            iot: { label: 'IoT & Embarqué', icon: 'fa-microchip' },
+            automatisme: { label: 'Automatisme', icon: 'fa-gears' },
+            ia: { label: 'IA & Vision', icon: 'fa-eye' },
+            energie: { label: 'Énergie', icon: 'fa-bolt' }
+        };
+
+        projectCards.forEach((p) => {
+            const domains = (p.getAttribute('data-domains-project') || '').split(',').map(d => d.trim()).filter(Boolean);
+            if (!domains.length) return;
+
+            const overlay = p.querySelector('.project-overlay');
+            const paragraph = overlay ? overlay.querySelector('p') : null;
+            if (overlay && paragraph) {
+                const badgeWrap = document.createElement('div');
+                badgeWrap.className = 'project-domains';
+                domains.forEach((d) => {
+                    const meta = domainMeta[d];
+                    if (!meta) return;
+                    const badge = document.createElement('span');
+                    badge.className = 'domain-badge' + (d === 'iot' ? ' domain-iot' : '');
+                    badge.innerHTML = `<i class="fas ${meta.icon}"></i> ${meta.label}`;
+                    badgeWrap.appendChild(badge);
+                });
+                paragraph.insertAdjacentElement('afterend', badgeWrap);
+            }
+
+            if (domains.includes('iot')) {
+                p.classList.add('project-embedded');
+                const ribbon = document.createElement('div');
+                ribbon.className = 'project-featured-badge';
+                ribbon.innerHTML = '<i class="fas fa-microchip"></i> Embarqué';
+                p.prepend(ribbon);
+            }
+        });
+
+        // ==========================================
+        // MODAL PROJETS
+        // ==========================================
+        const modal = document.getElementById('project-modal');
+        const modalBody = document.getElementById('modal-body');
+
+        const projectsData = {
+            fr: {
+                solar: {
+                    title: "Smart Solar System", date: "2024",
+                    context: "Projet personnel de développement d'un système solaire avec tracking automatique et supervision IoT.",
+                    objectives: ["Maximiser le rendement énergétique par tracking solaire", "Monitorer la production en temps réel", "Créer une interface web de supervision", "Implémenter un système de stockage intelligent"],
+                    technologies: ["ESP32", "Arduino", "MQTT", "Node-RED", "HTML/CSS/JS"],
+                    results: ["Augmentation du rendement de 35%", "Monitoring temps réel via application web", "Autonomie complète du système"]
+                },
+                airsense: {
+                    title: "AirSense Tech System", date: "2024 - Hackathon FST Fès",
+                    context: "Système de contrôle en temps réel de la qualité de l'air dans une voiture.",
+                    objectives: ["Mesure multi-paramètres (CO2, particules, température)", "Alertes intelligentes", "Historique et analytics"],
+                    technologies: ["ESP32", "Capteurs MQ-135, DHT22", "Python", "Application mobile"],
+                    results: ["Prix Hackathon", "Précision mesures >95%", "Réponse temps réel <1s"]
+                },
+                tri: {
+                    title: "Chaîne de Tri Automatisée", date: "2023 - FST Tanger",
+                    context: "Projet d'automatisme industriel : tri de pièces par vision.",
+                    objectives: ["Classification automatique par vision", "Tri par couleur et forme", "Contrôle qualité automatisé"],
+                    technologies: ["Raspberry Pi", "OpenCV", "Python", "Automate Siemens", "Convoyeur"],
+                    results: ["Précision tri: 97%", "Cadence: 30 pièces/min", "Réduction erreurs humaines"]
+                },
+                ctr: {
+                    title: "Configuration CTR 8312 Aviat Network", date: "2025",
+                    context: "Configuration pour assurer la qualité de service FH/FO.",
+                    objectives: ["Configuration optimale CTR", "Assurance QoS", "Tests de performance"],
+                    technologies: ["CTR 8312 Aviat", "ODU/IDU", "Analyseurs RF"],
+                    results: ["QoS optimisée", "Disponibilité 99.9%", "Latence réduite"]
+                },
+                agv: {
+                    title: "AGV Industriel (STM32)", date: "2024",
+                    context: "Prototype d'AGV autonome pour transport de charges.",
+                    objectives: ["Navigation autonome", "Suivi de trajectoire", "Détection obstacles"],
+                    technologies: ["STM32F4", "Capteurs ultrason", "Encodeurs", "FreeRTOS", "C/C++"],
+                    results: ["Précision ±2cm", "Vitesse 0.8m/s", "Charge max 5kg"]
+                },
+                pon: {
+                    title: "Réseau Optique PON", date: "2023",
+                    context: "Étude et modélisation d'un réseau GPON.",
+                    objectives: ["Dimensionnement réseau GPON", "Calcul budget optique", "Simulation performances"],
+                    technologies: ["OptiSystem", "MATLAB", "Normes ITU-T", "Fibres G.652"],
+                    results: ["Budget: 28dB marge", "Distance: 20km", "Débit: 2.5Gbps"]
+                }
+            },
+            en: {
+                solar: {
+                    title: "Smart Solar System", date: "2024",
+                    context: "Personal project developing a solar system with automatic tracking and IoT supervision.",
+                    objectives: ["Maximize energy yield through solar tracking", "Monitor production in real time", "Build a web supervision interface", "Implement smart storage management"],
+                    technologies: ["ESP32", "Arduino", "MQTT", "Node-RED", "HTML/CSS/JS"],
+                    results: ["35% increase in yield", "Real-time monitoring via web app", "Fully autonomous system"]
+                },
+                airsense: {
+                    title: "AirSense Tech System", date: "2024 - FST Fès Hackathon",
+                    context: "Real-time in-vehicle air quality control system.",
+                    objectives: ["Multi-parameter measurement (CO2, particulates, temperature)", "Smart alerts", "History and analytics"],
+                    technologies: ["ESP32", "MQ-135, DHT22 sensors", "Python", "Mobile app"],
+                    results: ["Hackathon award", "Measurement accuracy >95%", "Real-time response <1s"]
+                },
+                tri: {
+                    title: "Automated Sorting Line", date: "2023 - FST Tangier",
+                    context: "Industrial automation project: vision-based part sorting.",
+                    objectives: ["Automatic vision-based classification", "Sorting by color and shape", "Automated quality control"],
+                    technologies: ["Raspberry Pi", "OpenCV", "Python", "Siemens PLC", "Conveyor"],
+                    results: ["Sorting accuracy: 97%", "Rate: 30 parts/min", "Reduced human error"]
+                },
+                ctr: {
+                    title: "CTR 8312 Aviat Network Configuration", date: "2025",
+                    context: "Equipment configuration to ensure microwave/fiber quality of service.",
+                    objectives: ["Optimal CTR configuration", "QoS assurance", "Performance testing"],
+                    technologies: ["CTR 8312 Aviat", "ODU/IDU", "RF analyzers"],
+                    results: ["Optimized QoS", "99.9% availability", "Reduced latency"]
+                },
+                agv: {
+                    title: "Industrial AGV (STM32)", date: "2024",
+                    context: "Autonomous AGV prototype for load transport.",
+                    objectives: ["Autonomous navigation", "Path tracking", "Obstacle detection"],
+                    technologies: ["STM32F4", "Ultrasonic sensors", "Encoders", "FreeRTOS", "C/C++"],
+                    results: ["Accuracy ±2cm", "Speed 0.8m/s", "Max load 5kg"]
+                },
+                pon: {
+                    title: "PON Optical Network", date: "2023",
+                    context: "Study and modeling of a GPON network.",
+                    objectives: ["GPON network sizing", "Optical budget calculation", "Performance simulation"],
+                    technologies: ["OptiSystem", "MATLAB", "ITU-T standards", "G.652 fibers"],
+                    results: ["Budget: 28dB margin", "Distance: 20km", "Throughput: 2.5Gbps"]
+                }
+            }
+        };
+
+        function openProjectModal(projectId) {
+            const project = projectsData[currentLang][projectId];
+            if (!project) return;
+
+            modalBody.innerHTML = `
+                <h2 class="modal-title">${project.title}</h2>
+                <p style="color: var(--primary-blue); margin-bottom: 2rem; font-weight: 600;">${project.date}</p>
+                
+                <div class="modal-section">
+                    <h4>${t('modal.context')}</h4>
+                    <p>${project.context}</p>
+                </div>
+
+                <div class="modal-section">
+                    <h4>${t('modal.objectives')}</h4>
+                    <ul>
+                        ${project.objectives.map(obj => `<li>${obj}</li>`).join('')}
+                    </ul>
+                </div>
+
+                <div class="modal-section">
+                    <h4>${t('modal.technologies')}</h4>
+                    <div class="modal-tags">
+                        ${project.technologies.map(tech => `<span class="tag">${tech}</span>`).join('')}
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h4>${t('modal.results')}</h4>
+                    <ul>
+                        ${project.results.map(result => `<li>${result}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeProjectModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeProjectModal();
+            }
+        });
+
+        // ==========================================
+        // MODAL IMAGE CERTIFICATIONS
+        // ==========================================
+        function openImageModal(src) {
+            const imageModal = document.getElementById("imageModal");
+            const modalImage = document.getElementById("modalImage");
+            
+            imageModal.classList.add('active');
+            modalImage.src = src;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeImageModal() {
+            const imageModal = document.getElementById("imageModal");
+            imageModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Fermer au clic extérieur
+        document.getElementById("imageModal").addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeImageModal();
+            }
+        });
+
+        // Fermer avec Escape
+        document.addEventListener('keydown', (e) => {
+            const imageModal = document.getElementById("imageModal");
+            if (e.key === 'Escape' && imageModal.classList.contains('active')) {
+                closeImageModal();
+            }
+        });
+
+        // ==========================================
+        // FORMULAIRE CONTACT
+        // ==========================================
+        function showFormMessage(message, type) {
+            const messageDiv = document.getElementById('form-message');
+            messageDiv.textContent = message;
+            messageDiv.className = 'form-message ' + type;
+            
+            setTimeout(() => {
+                messageDiv.className = 'form-message';
+            }, 5000);
+        }
+
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', function(e) {
+            const name = this.name.value.trim();
+            const email = this.email.value.trim();
+            const message = this.message.value.trim();
+
+            if (!name || !email || !message) {
+                e.preventDefault();
+                showFormMessage(t('msg.required'), 'error');
+                return false;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                e.preventDefault();
+                showFormMessage(t('msg.invalid_email'), 'error');
+                return false;
+            }
+        });
+    </script>
+</body>
+</html>
