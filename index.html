@@ -187,60 +187,78 @@
         /* ==========================================
            LOADER
         ========================================== */
-        #loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--pcb-dark);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10000;
-            transition: opacity 0.5s, visibility 0.5s;
-        }
-        
-        #loader.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-        
-        .loader-spinner {
-            position: relative;
-            width: 64px;
-            height: 64px;
-            border: 2px solid rgba(34, 211, 238, 0.25);
-            border-radius: 6px;
-        }
+    /* --- Style du Loader --- */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0b131e; /* Fond sombre assorti au thème */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
 
-        .loader-spinner::before {
-            content: '';
-            position: absolute;
-            inset: -2px;
-            border-radius: 6px;
-            border: 2px solid transparent;
-            border-top-color: var(--pcb-cyan);
-            border-right-color: var(--pcb-cyan);
-            animation: spin 1s linear infinite;
-        }
+#loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
 
-        .loader-spinner::after {
-            content: 'BOOT';
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: var(--font-mono);
-            font-size: 0.7rem;
-            letter-spacing: 1px;
-            color: var(--pcb-cyan);
-        }
-        
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
+.loader-content {
+    width: 80%;
+    max-width: 500px;
+}
+
+/* --- Effet SVG Texte Lumineux --- */
+.glow-text-svg {
+    overflow: visible;
+}
+
+.glow-text-svg text {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 85px;
+    font-weight: 900;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+
+/* Texte de fond (empreinte sombre des lettres) */
+.text-bg {
+    fill: none;
+    stroke: rgba(0, 240, 255, 0.08);
+    stroke-width: 2px;
+}
+
+/* Texte animé avec l'effet de tracé lumineux */
+.text-stroke {
+    fill: none;
+    stroke: var(--pcb-cyan, #00f0ff);
+    stroke-width: 2.5px;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.7))
+            drop-shadow(0 0 20px rgba(0, 240, 255, 0.4));
+    animation: drawAndGlow 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+}
+
+@keyframes drawAndGlow {
+    0% {
+        stroke-dashoffset: 400;
+        filter: drop-shadow(0 0 2px rgba(0, 240, 255, 0.3));
+    }
+    50% {
+        stroke-dashoffset: 0;
+        filter: drop-shadow(0 0 12px rgba(0, 240, 255, 0.9))
+                drop-shadow(0 0 30px rgba(0, 240, 255, 0.5));
+    }
+    100% {
+        stroke-dashoffset: 0;
+        filter: drop-shadow(0 0 6px rgba(0, 240, 255, 0.5));
+    }
+}
         
         /* ==========================================
            NAVBAR
@@ -1888,9 +1906,17 @@
 
 <body>
     <!-- LOADER -->
-    <div id="loader">
-        <div class="loader-spinner"></div>
+<div id="loader">
+    <div class="loader-content">
+        <!-- SVG du texte ABASS en contours avec effet lumineux -->
+        <svg class="glow-text-svg" viewBox="0 0 600 120" width="100%" height="100%">
+            <!-- Texte de fond (grisé/estompé) -->
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" class="text-bg">ABASS</text>
+            <!-- Texte de premier plan (animé avec l'effet lumineux) -->
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" class="text-stroke">ABASS</text>
+        </svg>
     </div>
+</div>
 
     <!-- NAVBAR -->
     <nav id="navbar">
@@ -2051,6 +2077,23 @@
                 </div>
                 
                 <div class="exp-grid"> 
+                    <!-- Atlantic Consulting & Learning Services (ACLS) - Stage PFE -->
+                <div class="exp-card" data-domains="electronique,microcontroleurs,iot" data-detail="acls">
+                    <div class="exp-card-header">
+                        <img src="assets/acls_logo.jpg" alt="Atlantic Consulting & Learning Services">
+                    </div>
+                    <div class="exp-card-body">
+                        <h3 data-i18n="exp.acls.title">Mars – Juin 2026 : Stage PFE – Atlantic Consulting & Learning Services (ACLS)</h3>
+                        <ul>
+                            <li data-i18n="exp.acls.li1">Conception et validation d'architectures communicantes à haute disponibilité et résilientes</li>
+                            <li data-i18n="exp.acls.li2">Conception et exécution de plus de 40 scénarios de panne pour tester la continuité de service</li>
+                            <li data-i18n="exp.acls.li3">Étude approfondie de la segmentation, du routage, de la redondance et de la sécurité des flux</li>
+                            <li data-i18n="exp.acls.li4">Validation modulaire rigoureuse et intégration système (taux de réussite de 100%)</li>
+                        </ul>
+                        <button class="btn-small exp-detail-btn" data-detail="acls" type="button" data-i18n="common.more_details">Voir les détails</button>
+                    </div>
+                </div>
+                    
                     <!-- Telecel Faso -->
                     <div class="exp-card" data-domains="iot,telecom" data-detail="telecel">
                         <div class="exp-card-header">
@@ -2714,6 +2757,11 @@
                 'filter.iot_embarque': 'IoT & Embarqué', 'filter.ia_vision': 'IA & Vision',
                 'filter.energie': 'Énergie', 'filter.telecoms': 'Télécoms',
                 'common.more_details': 'Voir les détails', 'common.learn_more': 'En savoir plus',
+                'exp.acls.title': 'Mar – Jun 2026: PFE Internship – Atlantic Consulting & Learning Services (ACLS)',
+                'exp.acls.li1': 'Design and validation of high-availability, resilient communicating architectures',
+                'exp.acls.li2': 'Design and execution of over 40 failure scenarios to test service continuity',
+                'exp.acls.li3': 'In-depth study of data flow segmentation, routing, redundancy, and security',
+                'exp.acls.li4': 'Rigorous modular validation and system integration (100% success rate)',
                 'exp.telecel.title': 'Août – Sept 2025 : Stage PFA – Telecel Faso',
                 'exp.telecel.li1': 'Analyse et compréhension des réseaux de télécommunication opérateur',
                 'exp.telecel.li2': 'Étude et mesures des systèmes de transmission FH et fibre optique',
@@ -2820,6 +2868,11 @@
                 'filter.iot_embarque': 'IoT & Embedded', 'filter.ia_vision': 'AI & Vision',
                 'filter.energie': 'Energy', 'filter.telecoms': 'Telecoms',
                 'common.more_details': 'View details', 'common.learn_more': 'Learn more',
+                'exp.acls.title': 'Mar – Jun 2026: PFE Internship – Atlantic Consulting & Learning Services (ACLS)',
+                'exp.acls.li1': 'Design and validation of high-availability, resilient communicating architectures',
+                'exp.acls.li2': 'Design and execution of over 40 failure scenarios to test service continuity',
+                'exp.acls.li3': 'In-depth study of data flow segmentation, routing, redundancy, and security',
+                'exp.acls.li4': 'Rigorous modular validation and system integration (100% success rate)',
                 'exp.telecel.title': 'Aug – Sep 2025: PFA Internship – Telecel Faso',
                 'exp.telecel.li1': 'Analysis and understanding of telecom operator networks',
                 'exp.telecel.li2': 'Study and measurement of microwave (FH) and fiber optic transmission systems',
@@ -2997,11 +3050,29 @@
             rf: { fr: "Applications des radiofréquences : propagation, liaisons hertziennes et dimensionnement d'antennes pour les télécommunications.", en: "Radio frequency applications: propagation, microwave links and antenna sizing for telecommunications." }
         };
 
+       Voici ta structure `expDetails` considérablement enrichie. Chaque expérience intègre désormais un niveau de détail technique beaucoup plus profond, mettant en valeur les architectures, les protocoles, les méthodes de diagnostic, et l'impact direct de tes travaux.
+
+---
+
         const expDetails = {
-            telecel: { fr: "Immersion dans l'exploitation d'un réseau opérateur télécom : compréhension des architectures de transport (FH, fibre), configuration d'équipements CTR Aviat Networks, mesures de performance et diagnostic de liaisons. Un stage formateur sur la fiabilité et la qualité de service des réseaux de transport.", en: "Immersion in the operation of a telecom operator network: understanding transport architectures (microwave, fiber), configuring Aviat Networks CTR equipment, performance measurements and link diagnostics. A formative internship on the reliability and quality of service of transport networks." },
-            renault: { fr: "Stage de fin d'études centré sur la fiabilité électrique des lignes de production : conception de circuits de protection contre les microcoupures, réalisation de systèmes de bascule alimentation principale/secours, programmation d'automates et intégration de dispositifs de sécurité. Une expérience concrète de l'électrotechnique industrielle en environnement automobile.", en: "End-of-studies internship focused on the electrical reliability of production lines: designing protection circuits against micro-outages, building main/backup power switchover systems, PLC programming, and integrating safety devices. Hands-on experience of industrial electrical engineering in an automotive environment." },
-            sonabel: { fr: "Découverte du secteur de l'énergie électrique : intervention sur des systèmes de protection et de contrôle-commande, exploitation de compteurs et capteurs industriels, maintenance de transformateurs, et supervision via SCADA. Une première approche du génie électrique à l'échelle industrielle.", en: "Introduction to the electrical energy sector: working on protection and control systems, operating industrial meters and sensors, transformer maintenance, and SCADA supervision. A first hands-on approach to electrical engineering at industrial scale." }
+            acls: { 
+                fr: "Projet de fin d'études (PFE) mené chez ACLS (Partenaire de formation agréé Huawei HALP - Casablanca). L'objectif central était de concevoir, valider modulairement puis intégrer une infrastructure de communication campus hautement résiliente, sécurisée et exempte de tout point de défaillance unique (Single Point of Failure - SPOF). Dans un premier temps, déploiement et validation de 8 laboratoires sous Huawei eNSP : routage interne à l'état de liens et par vecteur de distance (OSPF multi-aires, IS-IS) et routage inter-domaines (BGP avec Route Reflector et politiques MED pour l'ingénierie du trafic), prévention des boucles et équilibrage de charge au niveau L2 (STP, RSTP, MSTP), redondance de passerelle de premier saut (VRRP), agrégation de liens haut débit (Eth-Trunk/LACP), et durcissement de la sécurité par l'implémentation de politiques d'inspection inter-zones sur pare-feux de nouvelle génération (Huawei USG6000). Mise en place d'une architecture WLAN centralisée avancée (contrôleur AC, points d'accès Fit AP, tunnel CAPWAP, et gestion du roaming intra/inter-WAC sans aucune perte de paquet). Intégration globale de l'architecture hiérarchique à 3 niveaux (Core-Aggregation-Access) avec double cœur et cluster de pare-feux en mode actif/passif (synchronisation HRP). Exécution rigoureuse de 53 scénarios de pannes critiques (coupures physiques de liens, pannes simulées de commutateurs, de routeurs de bordure et de firewalls) : 39/39 tests de validation modulaire et 14/14 tests d'intégration réussis à 100%, garantissant des temps de basculement de redondance ultra-rapides (< 3 s).", 
+                en: "End-of-studies internship (PFE) at ACLS (Huawei Authorized Learning Partner - Casablanca). The primary objective was to design, modularly validate, and integrate a highly resilient, secure campus communication infrastructure with zero Single Points of Failure (SPOF). Initially deployed and validated 8 distinct labs using Huawei eNSP: internal link-state and distance-vector routing (multi-area OSPF, IS-IS) alongside inter-domain routing (BGP with Route Reflector and MED policies for traffic engineering), Layer 2 loop prevention and load balancing (STP, RSTP, MSTP), first-hop gateway redundancy (VRRP), high-speed link aggregation (Eth-Trunk/LACP), and security hardening via inter-zone inspection policies on next-gen firewalls (Huawei USG6000). Implemented an advanced centralized WLAN architecture (AC controller, Fit APs, CAPWAP tunneling, and zero-packet-loss intra/inter-WAC roaming). Global integration of a 3-tier hierarchical campus architecture (Core-Aggregation-Access) featuring dual core switches and an active/passive firewall cluster (HRP synchronization). Rigorously executed 53 critical failure test scenarios (physical link cuts, simulated switch, border router, and firewall outages): 39/39 modular validation tests and 14/14 integration tests passed with a 100% success rate, guaranteeing ultra-fast redundancy switchover times (< 3 s)." 
+            },
+            telecel: { 
+                fr: "Stage de perfectionnement technique (PFA) au sein du département transmission et réseaux de l'opérateur Telecel Faso. Immersion approfondie dans l'exploitation, le dimensionnement et la supervision des infrastructures de transport cœur de réseau et d'accès. Étude métrologique et analyse poussée des performances des liaisons de transmission hertziennes par Faisceaux Hertziens (FH) et des réseaux de transport en fibre optique (SDH/WDM). Configuration, paramétrage fin, alignement d'antennes et tests de qualification de modems radio ainsi que d'équipements de transmission d'infrastructure de pointe (notamment les plateformes CTR 8312 et ODU d'Aviat Networks). Diagnostic de la Qualité de Service (QoS), calculs et évaluation sur site des bilans de liaison RF, analyse granulaire des taux d'erreur sur les bits (BER) et des trames sur les canaux de transport à haut débit. Implémentation et suivi rigoureux des procédures de maintenance préventive et corrective sur les stations relais pour garantir la disponibilité opérationnelle maximale et la robustesse de la boucle de transport de l'opérateur.", 
+                en: "Technical perfectionment internship (PFA) within the transmission and network department of telecom operator Telecel Faso. Deep dive into the operation, sizing, and supervision of core transport and access network infrastructures. Metrological study and advanced performance analysis of Microwave (FH) links and fiber optic transport networks (SDH/WDM). Configuration, fine-tuning, antenna alignment, and qualification testing of radio modems and cutting-edge transport infrastructure equipment (specifically Aviat Networks CTR 8312 and ODU platforms). Diagnosis of Quality of Service (QoS), site calculations and evaluation of RF link budgets, granular bit error rate (BER) and frame analysis on high-speed transport channels. Rigorous implementation and monitoring of preventive and corrective maintenance procedures across relay stations to ensure maximum operational availability and robustness of the operator's transport loop." 
+            },
+            renault: { 
+                fr: "Stage de fin d'études orienté vers la sûreté de fonctionnement, la continuité de service et la robustesse électrique en milieu industriel automobile hautement automatisé (Renault Tanger). Analyse des risques de pertes de production liés aux perturbations du réseau électrique et conception matérielle de circuits de protection dédiés contre les microcoupures. Étude, dimensionnement et réalisation de systèmes de commutation automatique haute vitesse entre l'alimentation principale et la source de secours (groupes électrogènes / onduleurs). Programmation avancée d'automates programmables industriels (API / PLCs) pour automatiser la logique de basculement de charge sans interruption critique des organes de commande. Intégration et câblage de barrières immatérielles, de relais de sécurité et d'interverrouillages matériels pour la protection des opérateurs et des lignes de production robotisées.", 
+                en: "End-of-studies internship focused on dependability, service continuity, and electrical robustness in a highly automated automotive manufacturing environment (Renault Tangier). Analyzed production loss risks associated with electrical grid disturbances and engineered hardware protection circuits against micro-outages. Studied, sized, and built high-speed automatic switching systems between the main power supply and backup sources (generators/UPS). Advanced programming of Programmable Logic Controllers (PLCs) to automate load switchover logic without critical interruption to control elements. Integration and wiring of light curtains, safety relays, and hardware interlocks to protect operators and automated robotic production lines." 
+            },
+            sonabel: { 
+                fr: "Stage d'initiation technique au sein de la Direction du Contrôle, de l'Équipement et des Télécommunications (DCET) de la SONABEL (Société Nationale d'Électricité du Burkina). Observation active et participation aux interventions sur les systèmes de protection numérique, les cellules de Haute Tension (HTA/HTB) et les armoires de contrôle-commande de postes sources. Manipulation, relevés de mesures et métrologie sur les compteurs d'énergie industriels et les capteurs de sous-stations. Suivi technique des opérations de maintenance préventive et curative sur les transformateurs de puissance de forte capacité et les jeux de bars. Découverte pratique des salles de contrôle, des schémas unifilaires et des architectures de téléconduite et de supervision centralisée basées sur des systèmes SCADA industriels.", 
+                en: "Technical introductory internship within the Control, Equipment, and Telecommunications Department (DCET) of SONABEL (National Electricity Company of Burkina Faso). Active observation and participation in interventions on digital protection systems, Medium/High Voltage switchgear (MV/HV), and substation control-command cabinets. Handling, measurement logging, and metrology on industrial energy meters and substation sensors. Technical monitoring of preventive and corrective maintenance operations on high-capacity power transformers and busbars. Hands-on discovery of control rooms, single-line diagrams, and centralized telecontrol and supervision architectures based on industrial SCADA systems." 
+            }
         };
+
 
         const assocDetails = {
             aebm: { fr: "Rôle de coordination au sein du bureau exécutif de l'association des étudiants burkinabè au Maroc (AEBM Tanger) : organisation d'événements, gestion administrative et coordination d'équipe.", en: "Coordination role within the executive board of the Association of Burkinabe Students in Morocco (AEBM Tangier): event organization, administrative management and team coordination." },
