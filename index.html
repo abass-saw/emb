@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="dark">
 <head>
     <meta charset="UTF-8">
+    <script>
+  document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'dark');
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO -->
@@ -17,8 +20,10 @@
     <meta property="og:type" content="website">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/mas_favicon.ico">
-    
+
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+  
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     
@@ -241,9 +246,8 @@
     stroke-dashoffset: 400;
     filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.7))
             drop-shadow(0 0 20px rgba(0, 240, 255, 0.4));
-    animation: drawAndGlow 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+    animation: drawAndGlow 1.8s cubic-bezier(0.4, 0, 0.2, 1) forwards; /* 'forwards' s'arrête à la fin */
 }
-
 @keyframes drawAndGlow {
     0% {
         stroke-dashoffset: 400;
@@ -2703,13 +2707,19 @@
     </div>
 
     <script>
-        // ==========================================
+  // ==========================================
         // LOADER
         // ==========================================
+    function hideLoader() {
+            const loader = document.getElementById('loader');
+            if (loader) {
+                loader.classList.add('hidden');
+            }
+        }
+
+        // Méthode 1 : Disparaît en douceur après 2 secondes (laisse le temps de voir l'animation)
         window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('loader').classList.add('hidden');
-            }, 500);
+            setTimeout(hideLoader, 2000);
         });
 
         // ==========================================
@@ -2722,11 +2732,11 @@
             localStorage.setItem('theme', theme);
         }
 
-        const savedTheme = localStorage.getItem('theme') || 'light';
+        const savedTheme = localStorage.getItem('theme') || 'dark';
         applyTheme(savedTheme);
 
         document.getElementById('theme-toggle').addEventListener('click', () => {
-            const current = document.documentElement.getAttribute('data-theme');
+        const current = document.documentElement.getAttribute('data-theme');
             applyTheme(current === 'dark' ? 'light' : 'dark');
         });
 
@@ -3049,10 +3059,6 @@
             ipaddr: { fr: "Adressage IP, routage et gestion de réseaux : sous-réseaux, tables de routage et supervision d'infrastructure réseau.", en: "IP addressing, routing and network management: subnetting, routing tables and network infrastructure supervision." },
             rf: { fr: "Applications des radiofréquences : propagation, liaisons hertziennes et dimensionnement d'antennes pour les télécommunications.", en: "Radio frequency applications: propagation, microwave links and antenna sizing for telecommunications." }
         };
-
-       Voici ta structure `expDetails` considérablement enrichie. Chaque expérience intègre désormais un niveau de détail technique beaucoup plus profond, mettant en valeur les architectures, les protocoles, les méthodes de diagnostic, et l'impact direct de tes travaux.
-
----
 
         const expDetails = {
             acls: { 
